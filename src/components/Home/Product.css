@@ -1,0 +1,28 @@
+.product-image{
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.buy-btn{
+  background-color: #0079e3; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 25px;
+}
+
+.cart-btn{
+  background-color: #f8c701; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 25px;
+}
