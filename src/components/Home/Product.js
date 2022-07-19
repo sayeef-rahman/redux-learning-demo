@@ -1,13 +1,22 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../Redux/Actions/cartAction';
 import './Product.css';
 
 const Product = ({ product }) => {
   const { image, price, title, id } = product;
 
-  const addToCart = (id) =>{
-    console.log(id);
-  }
+  //state
+  // const cartCounter = useSelector(state => state.cartCounter)
+  const dispatch = useDispatch();
+
+  const addToShoppingCart = (product) => {
+    let oldProduct = product;
+    oldProduct['qty'] = 1;
+    dispatch(addToCart(oldProduct));
+  };
+
   return (
     <div className='col-lg-3 col-md-4 col-6 mt-4'>
       {/* <h3>Product Name: {product.title}</h3> */}
@@ -23,10 +32,18 @@ const Product = ({ product }) => {
         </Card.Body>
         <div className='d-flex justify-content-evenly mb-2'>
           <button className='buy-btn fw-bold '>BUY NOW</button>
-          <button className='cart-btn fw-bold' onClick={ () => addToCart( id ) }>Add to Cart</button>
+          <button
+            className='cart-btn fw-bold'
+            onClick={() => addToShoppingCart(product)}
+          >
+            Add to Cart
+          </button>
         </div>
       </Card>
     </div>
   );
 };
+
 export default Product;
+
+const mapDispatchToProps = () => {};

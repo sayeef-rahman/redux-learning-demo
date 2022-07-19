@@ -2,9 +2,12 @@ import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import './Header.css'
-
+import './Header.css';
+import store from '../../../Redux/store';
+import { useSelector } from 'react-redux';
 const Header = () => {
+  const cart = useSelector((state) => state.cart);
+  console.log('products', cart);
   return (
     <>
       <Navbar bg='dark' variant='dark'>
@@ -26,7 +29,9 @@ const Header = () => {
             <Navbar.Brand href='#home'>Women</Navbar.Brand>
             <Navbar.Brand href='#home'>
               <FontAwesomeIcon icon={faShoppingCart} />
-              <span className='badge badge-warning' id='lblCartCount'> 5 </span>
+              <span className='badge badge-warning' id='lblCartCount'>
+                {cart.cartItems?.length}
+              </span>
             </Navbar.Brand>
           </div>
         </Container>
