@@ -23,14 +23,14 @@ const SingleCartItem = ({ cartItem }) => {
   };
 
   return (
-    <div className='d-flex justify-content-between my-2 product-container'>
-      <img className='cart-image' src={image} alt='' />
+    <div className='d-flex justify-content-between my-2 product-container border border-primary rounded-3'>
+      <img className='cart-image ms-2' src={image} alt='' />
       <div className='my-auto mx-2'>
         <h5 className='fontSize'>{title}</h5>
         <h5 className='fontSize'>Price: {price}</h5>
       </div>
       <button
-        className='btn-cart-remove'
+        className='btn-cart-remove me-2'
         onClick={() => removeProductFromCart(id)}
       >
         <FontAwesomeIcon icon={faRemove}></FontAwesomeIcon>
