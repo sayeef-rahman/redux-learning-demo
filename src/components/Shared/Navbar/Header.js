@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 const Header = () => {
   //Cart items
   const cart = useSelector((state) => state.cart);
-  console.log('Header Products:', cart);
+  // console.log('Header Products:', cart);
 
   return (
     <>

@@ -4,7 +4,7 @@ import SingleCartItem from './SingleCartItem';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-  console.log('Cart Items:', cart);
+  // console.log('Cart Items:', cart);
 
   // const [show, setShow] = useState(false);
 
@@ -12,8 +12,8 @@ const Cart = () => {
   // const handleShow = () => setShow(true);
 
   return (
-    <div className='bg-warning'>
-      <h4>Cart Items: {cart.cartItems.length}</h4>
+    <div>
+      <h5>Cart Items</h5>
       {cart.cartItems.map((cartItem) => (
         <SingleCartItem key={cartItem.id} cartItem={cartItem}></SingleCartItem>
       ))}

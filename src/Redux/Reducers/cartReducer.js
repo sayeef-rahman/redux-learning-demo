@@ -4,14 +4,30 @@ const initialState = {
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
+    // Add product to cart
     case 'ADD_TO_CART': {
       const newState = {
         ...state,
         cartItems: [...state.cartItems, action.payload],
       };
-      console.log("Cart Reducer: ",newState);
+      // console.log("Cart Reducer: ",newState);
       return newState;
     }
+
+    //Remove Product From Cart
+    case 'REMOVE_FROM_CART': {
+      let productID = action.payload;
+      let oldCartItems = state.cartItems;
+      const filteredProducts = oldCartItems.filter (product => product.id !== productID);
+      console.log('filtered Products:',filteredProducts)
+      const newState = {
+        cartItems: [...filteredProducts]
+      };
+      return newState;
+    }
+
+    // console.log("Product ID: ",action.payload)
+    // console.log("All Products: ",state.cartItems);
     default:
       return state;
   }
@@ -20,7 +36,6 @@ const cartReducer = (state = initialState, action) => {
 // console.log('Initial State: ', initialState.cartItems);
 
 export default cartReducer;
-
 
 // const cartReducer = (state = initialState, action) => {
 //   switch (action.type) {
@@ -42,3 +57,9 @@ export default cartReducer;
 //       return state;
 //   }
 // };
+
+// case 'REMOVE_FROM_CART': {
+//
+
+//   // return const foundInCart = 
+//   };

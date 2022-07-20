@@ -1,0 +1,14 @@
+.cart-container{
+  width: 540px;
+}
+
+.cart-image{
+  height: 100px;
+  width: 100px;
+}
+
+.btn-cart-remove{
+  border: none;
+  background-color: white;
+  font-size: 30px;
+}
