@@ -1,14 +1,16 @@
-.cart-container{
-  width: 540px;
+.product-container{
+  font-size: 10px;
 }
 
 .cart-image{
   height: 100px;
   width: 100px;
 }
-
+.fontSize{
+  font-size: 14px;
+}
 .btn-cart-remove{
   border: none;
-  background-color: white;
+  background-color: bisque;
   font-size: 30px;
 }

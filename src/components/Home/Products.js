@@ -11,7 +11,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div>
+    <div className='product-container'>
       {/* Title & All Product button section */}
       <div className='d-flex justify-content-between w-75 mx-auto'>
         <div>

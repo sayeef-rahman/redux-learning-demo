@@ -10,12 +10,13 @@ function App() {
   return (
     <div>
       <Header></Header>
+      <Cart></Cart>
       <Home></Home>
       {/* <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='cart' element={<Cart></Cart>}></Route>
       </Routes> */}
-      <Cart></Cart>
+      
       {/* <SingleCartItem></SingleCartItem> */}
       <Footer></Footer>
     </div>

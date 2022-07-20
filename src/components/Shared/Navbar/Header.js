@@ -4,11 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Header.css';
 import { useSelector } from 'react-redux';
+import Cart from '../../Cart/Cart';
 
 const Header = () => {
   //Cart items
   const cart = useSelector((state) => state.cart);
   // console.log('Header Products:', cart);
+
+  // Show Cart modal in Cart Button Click
+  const showCart= () =>{
+    // console.log('clicked')
+    return <Cart></Cart>;
+  }
 
   return (
     <>
@@ -30,7 +37,7 @@ const Header = () => {
             <Navbar.Brand href='#home'>Men</Navbar.Brand>
             <Navbar.Brand href='#home'>Women</Navbar.Brand>
             {/* Cart Logo */}
-            <Navbar.Brand>
+            <Navbar.Brand onClick={showCart}>
               <FontAwesomeIcon icon={faShoppingCart} />
               <span className='badge badge-warning' id='lblCartCount'>
                 {cart.cartItems?.length}

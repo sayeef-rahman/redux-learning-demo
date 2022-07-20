@@ -1,0 +1,21 @@
+.cart-container{
+  background-color: bisque;
+  font-size: 12px;;
+  max-width: 400px;
+  max-height: 400px;
+  padding: 10px;
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+  overflow: scroll;
+  z-index: 1;
+}
+
+.cart-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* .btn-cartReset{
+  border: none;
+
+} */
