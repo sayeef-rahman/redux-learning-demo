@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import SingleCartItem from './SingleCartItem';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
+  const resetCart = () => {
+    // dispatch(resetCartAction());
+    // dispatch({ type: "RESET_CART" }); //Working
+    dispatch(resetCartAction());
+  };
   // console.log('Cart Items:', cart);
 
   // const [show, setShow] = useState(false);
@@ -17,6 +24,12 @@ const Cart = () => {
       {cart.cartItems.map((cartItem) => (
         <SingleCartItem key={cartItem.id} cartItem={cartItem}></SingleCartItem>
       ))}
+
+      {cart.cartItems?.length ? (
+        <button onClick={resetCart}>Reset Cart</button>
+      ) : (
+        ''
+      )}
     </div>
   );
 };

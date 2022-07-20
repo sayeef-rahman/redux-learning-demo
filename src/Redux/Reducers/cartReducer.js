@@ -6,6 +6,7 @@ const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     // Add product to cart
     case 'ADD_TO_CART': {
+      let productID = action.payload.id;
       const newState = {
         ...state,
         cartItems: [...state.cartItems, action.payload],
@@ -24,6 +25,12 @@ const cartReducer = (state = initialState, action) => {
         cartItems: [...filteredProducts]
       };
       return newState;
+    }
+
+    //Reset Cart
+    case 'RESET_CART':{
+      return initialState;
+      // const newState = initialState;
     }
 
     // console.log("Product ID: ",action.payload)

@@ -11,3 +11,8 @@ export function removeFromCart(payload) {
     payload,
   };
 }
+export function resetCartAction() {
+  return {
+    type: 'RESET_CART',
+  };
+}
