@@ -9,7 +9,7 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         cartItems: [...state.cartItems, action.payload],
       };
-      // console.log(newState);
+      console.log("Cart Reducer: ",newState);
       return newState;
     }
     default:
