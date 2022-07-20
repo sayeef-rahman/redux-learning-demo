@@ -7,7 +7,7 @@ import store from '../../../Redux/store';
 import { useSelector } from 'react-redux';
 const Header = () => {
   const cart = useSelector((state) => state.cart);
-  console.log('products', cart);
+  console.log('products:', cart);
   return (
     <>
       <Navbar bg='dark' variant='dark'>
