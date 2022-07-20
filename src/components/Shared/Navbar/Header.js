@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -10,12 +10,11 @@ const Header = () => {
   //Cart items
   const cart = useSelector((state) => state.cart);
   // console.log('Header Products:', cart);
-
+  const [cartVisibility, setCartVisibility] = useState(false);
   // Show Cart modal in Cart Button Click
-  const showCart= () =>{
-    // console.log('clicked')
-    return <Cart></Cart>;
-  }
+  const showCart = () => {
+    setCartVisibility(!cartVisibility);
+  };
 
   return (
     <>
@@ -37,7 +36,7 @@ const Header = () => {
             <Navbar.Brand href='#home'>Men</Navbar.Brand>
             <Navbar.Brand href='#home'>Women</Navbar.Brand>
             {/* Cart Logo */}
-            <Navbar.Brand onClick={showCart}>
+            <Navbar.Brand onClick={() => showCart()}>
               <FontAwesomeIcon icon={faShoppingCart} />
               <span className='badge badge-warning' id='lblCartCount'>
                 {cart.cartItems?.length}
@@ -46,6 +45,7 @@ const Header = () => {
           </div>
         </Container>
       </Navbar>
+      <Cart cartVisibility={cartVisibility}></Cart>
     </>
   );
 };

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { resetCartAction } from '../../Redux/Actions/cartAction';
 import SingleCartItem from './SingleCartItem';
-import './Cart.css'
+import './Cart.css';
 
-const Cart = () => {
+const Cart = ({cartVisibility}) => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
@@ -15,14 +15,16 @@ const Cart = () => {
   };
 
   return (
-    <div className='cart-container text-center'>
+    <div className={cartVisibility ? 'cart-container text-center d-block' : 'cart-container text-center d-none'}>
       <h5 className=''>Cart Items</h5>
       {cart.cartItems.map((cartItem) => (
         <SingleCartItem key={cartItem.id} cartItem={cartItem}></SingleCartItem>
       ))}
 
       {cart.cartItems?.length ? (
-        <button className='btn btn-primary' onClick={resetCart}>Reset Cart</button>
+        <button className='btn btn-primary' onClick={resetCart}>
+          Reset Cart
+        </button>
       ) : (
         ''
       )}
