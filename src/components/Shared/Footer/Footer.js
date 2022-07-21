@@ -1,15 +1,22 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { faIdCard } from '@fortawesome/free-solid-svg-icons';
-import './Footer.css'
+import './Footer.css';
 
 const Footer = () => {
   return (
     <footer className='py-5 footer-background-color'>
       <div className='w-75 mx-auto'>
-        <div>
-          <div></div>
-          <div></div>
+        <div className='d-flex'>
+          <div>
+            <h6>ABOUT US</h6>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Phasellus imperdiet, nulla et dictum interdum, nisi lorem
+                egestas vitae scel
+            </p>
+          </div>
+          <div>hi</div>
           <div></div>
           <div></div>
         </div>
