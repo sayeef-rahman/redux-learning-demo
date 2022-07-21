@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
 import './Header.css';
 import { useSelector } from 'react-redux';
 import Cart from '../../Cart/Cart';
@@ -15,6 +15,11 @@ const Header = () => {
   const showCart = () => {
     setCartVisibility(!cartVisibility);
   };
+
+  //Show User Information
+  const showUser = () =>{
+    console.log('user clicked');
+  }
 
   return (
     <>
@@ -42,6 +47,13 @@ const Header = () => {
                 {cart.cartItems?.length}
               </span>
             </Navbar.Brand>
+            {/* User Profile */}
+            <Navbar.Brand onClick={() => showUser()}>
+              <FontAwesomeIcon icon={faUser} />
+              <span className='badge badge-warning' id='lblCartCount'>
+              </span>
+            </Navbar.Brand>
+            
           </div>
         </Container>
       </Navbar>
