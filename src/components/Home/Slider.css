@@ -1,0 +1,12 @@
+.swiper-main-container{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 427px;
+  max-width: 70%;
+}
+.slider-image{
+  width: 100%;
+}

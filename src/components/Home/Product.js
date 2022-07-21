@@ -12,9 +12,7 @@ const Product = ({ product }) => {
   const dispatch = useDispatch();
 
   const addToShoppingCart = (product) => {
-    let oldProduct = product;
-    oldProduct['qty'] = 1;
-    dispatch(addToCart(oldProduct));
+    dispatch(addToCart(product));
   };
 
   return (

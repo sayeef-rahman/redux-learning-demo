@@ -2,33 +2,48 @@ const initialState = {
   cartItems: [],
 };
 
-const cartReducer = (state = initialState, action) => {
+const cartReducer = (state = localStorage.getItem('cart') || [], action) => {
   switch (action.type) {
     // Add product to cart
     case 'ADD_TO_CART': {
-      let productID = action.payload.id;
-      const newState = {
-        ...state,
-        cartItems: [...state.cartItems, action.payload],
-      };
-      // console.log("Cart Reducer: ",newState);
-      return newState;
+      // console.log('cart', action?.payload);
+      const existingCart = [...state];
+      const coming = action.payload;
+      const removeD = existingCart.find((food) => food.id === coming.id);
+      if (removeD) {
+        removeD.qty = removeD.qty + 1;
+        localStorage.setItem('carts', JSON.stringify(existingCart));
+        existingCart.map((cartItem) => {
+          state.push(cartItem);
+        });
+        return existingCart;
+      } else {
+        action.payload.qty = 1;
+        const newCart = [...existingCart, action.payload];
+
+        newCart.map((cartItem) => {
+          state.push(cartItem);
+        });
+        localStorage.setItem('carts', JSON.stringify(newCart));
+        return newCart;
+      }
     }
 
     //Remove Product From Cart
     case 'REMOVE_FROM_CART': {
       let productID = action.payload;
-      let oldCartItems = state.cartItems;
-      const filteredProducts = oldCartItems.filter (product => product.id !== productID);
-      console.log('filtered Products:',filteredProducts)
-      const newState = {
-        cartItems: [...filteredProducts]
-      };
-      return newState;
+      console.log('Remove Cart:(ProductID)', productID);
+      let oldCartItems = JSON.parse(state);
+      const filteredProducts = oldCartItems.filter(
+        (product) => product.id !== productID
+      );
+      let products = JSON.stringify(filteredProducts);
+      localStorage.setItem('carts', products);
+      return products;
     }
 
     //Reset Cart
-    case 'RESET_CART':{
+    case 'RESET_CART': {
       return initialState;
       // const newState = initialState;
     }
@@ -68,5 +83,5 @@ export default cartReducer;
 // case 'REMOVE_FROM_CART': {
 //
 
-//   // return const foundInCart = 
+//   // return const foundInCart =
 //   };

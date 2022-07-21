@@ -45,7 +45,7 @@ const Header = () => {
           </div>
         </Container>
       </Navbar>
-      <Cart cartVisibility={cartVisibility}></Cart>
+      {/* <Cart cartVisibility={cartVisibility}></Cart> */}
     </>
   );
 };

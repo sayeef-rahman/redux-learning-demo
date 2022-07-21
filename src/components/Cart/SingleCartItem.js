@@ -8,11 +8,11 @@ import { removeFromCart } from '../../Redux/Actions/cartAction';
 
 const SingleCartItem = ({ cartItem }) => {
   const { id, image, title, price } = cartItem;
-  console.log('Single Cart Item: ', cartItem);
+  // console.log('Single Cart Item: ', cartItem);
 
   // Get current state from reducer
   const cart = useSelector((state) => state.cart);
-  console.log('Cart Items (in SingleCart):', cart);
+  // console.log('Cart Items (in SingleCart):', cart);
   
   // dispatch an action
   const dispatch = useDispatch();
