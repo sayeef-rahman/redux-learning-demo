@@ -1,28 +1,105 @@
 .product-image{
-  max-height: 200px;
-  max-width: 200px;
+height: 300px;
 }
 
-.buy-btn{
-  background-color: #0079e3; 
-  border: none;
-  color: white;
-  padding: 15px 32px;
+/* CSS */
+.cart-btn {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  /* letter-spacing: -.8px; */
+  line-height: 24px;
+  width: 140px;
+  outline: 0;
+  padding: 0 17px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 25px;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.cart-btn{
-  background-color: #f8c701; 
-  border: none;
-  color: white;
-  padding: 15px 32px;
+.cart-btn:focus {
+  color: #171e29;
+}
+
+.cart-btn:hover {
+  background-color: #00027d;
+  border-color: rgb(0, 50, 125);
+  color: rgb(255, 242, 0);
+  fill: rgb(0, 45, 112);
+}
+
+.cart-btn:active {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .cart-btn {
+    min-width: 170px;
+  }
+}
+
+/* buy-now-btn */
+/* CSS */
+.buy-now-btn {
+  align-items: center;
+  background-color: #06f;
+  border: 2px solid #06f;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  /* letter-spacing: -.8px; */
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 25px;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buy-now-btn:focus {
+  color: #171e29;
+}
+
+.buy-now-btn:hover {
+  background-color: #239B56;
+  border-color: #F39C12;
+  fill: #06f;
+}
+
+.buy-now-btn:active {
+  background-color: #3385ff;
+  border-color: #F39C12;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .buy-now-btn {
+    min-width: 170px;
+  }
 }
