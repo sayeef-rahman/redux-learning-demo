@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { faIdCard } from '@fortawesome/free-solid-svg-icons';
+import { faIdCard,faUser } from '@fortawesome/free-solid-svg-icons';
 import './Footer.css';
 
 const Footer = () => {
@@ -15,6 +15,14 @@ const Footer = () => {
                 Phasellus imperdiet, nulla et dictum interdum, nisi lorem
                 egestas vitae scel
             </p>
+            <h6>FOLLOW US ON SOCIAL:</h6>
+            <FontAwesomeIcon className='p-3 bg-warning rounded rounded-circle me-2' icon={faUser} />
+            <FontAwesomeIcon className='p-3 bg-warning rounded rounded-circle me-2' icon={faUser} />
+            <FontAwesomeIcon className='p-3 bg-warning rounded rounded-circle me-2' icon={faUser} />
+            <FontAwesomeIcon className='p-3 bg-warning rounded rounded-circle me-2' icon={faUser} />
+            
+            
+            
           </div>
           <div>hi</div>
           <div></div>
