@@ -6,6 +6,10 @@ import './Header.css';
 import { useSelector } from 'react-redux';
 import Cart from '../../Cart/Cart';
 
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
+
 const Header = () => {
   //Cart items
   const cart = useSelector((state) => state.cart);
@@ -14,6 +18,20 @@ const Header = () => {
   // Show Cart modal in Cart Button Click
   const showCart = () => {
     setCartVisibility(!cartVisibility);
+  };
+
+  //Logged in User
+  const [user] = useAuthState(auth);
+  if(user){
+    console.log(user.photoURL);
+  }
+  else{
+    console.log('No user found')
+  }
+
+  // User Logout
+  const logout = () => {
+    signOut(auth);
   };
 
   //Show User Information
@@ -47,12 +65,18 @@ const Header = () => {
                 {cart.cartItems?.length}
               </span>
             </Navbar.Brand>
+
             {/* User Profile */}
-            <Navbar.Brand onClick={() => showUser()}>
-              <FontAwesomeIcon icon={faUser} />
-              <span className='badge badge-warning' id='lblCartCount'>
-              </span>
+            <Navbar.Brand>
+              {
+                user?<img src={user.photoURL} alt="user profile photo" className='' style={{width:"30px"}}/>:<FontAwesomeIcon icon={faUser} />
+              }
+              {/* <span className='badge badge-warning' id='lblCartCount'>
+              </span> */}
             </Navbar.Brand>
+
+            {/* Login Button */}
+            <Navbar.Brand>{user? <button className="" onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>}</Navbar.Brand>
             
           </div>
         </Container>
