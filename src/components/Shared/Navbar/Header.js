@@ -43,15 +43,17 @@ const Header = () => {
     <div className='navbar-header-container'>
       <Navbar className='' variant='dark'>
         <Container>
-          <Navbar.Brand href='#home'>
-            <img
-              alt=''
-              src='https://img.freepik.com/premium-vector/online-shop-logo-designs-concept-vector-online-store-logo-designs_7649-661.jpg?w=2000'
-              width='30'
-              height='30'
-              className='d-inline-block align-top'
-            />{' '}
-            Online Shop
+          <Navbar.Brand >
+            <Link to='/' className='text-white text-decoration-none'>
+              <img
+                alt=''
+                src='https://img.freepik.com/premium-vector/online-shop-logo-designs-concept-vector-online-store-logo-designs_7649-661.jpg?w=2000'
+                width='30'
+                height='30'
+                className='d-inline-block align-top'
+              />{' '}
+              Online Shop
+            </Link>
           </Navbar.Brand>
           <div>
             <Navbar.Brand href='#home' className='fs-6'>

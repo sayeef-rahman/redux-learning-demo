@@ -21,7 +21,7 @@ const Footer = () => {
           <div></div>
         </div>
         {/* Bottom text & icom element */}
-        <div className='d-flex border-top border-secondary pt-4 justify-content-between align-items'>
+        <div className='d-flex border-top border-warning pt-4 justify-content-between align-items'>
           <div>
             <h6>Copyright © 2022 Sindabad. All Rights Reserved</h6>
           </div>
