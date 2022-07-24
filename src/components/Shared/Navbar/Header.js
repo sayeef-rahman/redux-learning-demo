@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import { Container, Navbar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -30,7 +31,7 @@ const Header = () => {
   }
 
   // User Logout
-  const logout = () => {
+  const signOut = () => {
     signOut(auth);
   };
 
@@ -76,7 +77,7 @@ const Header = () => {
             </Navbar.Brand>
 
             {/* Login Button */}
-            <Navbar.Brand>{user? <button className="" onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>}</Navbar.Brand>
+            <Navbar.Brand>{user? <button className="" onClick={signOut} >Sign Out</button> : <Link to="/login">Login</Link>}</Navbar.Brand>
             
           </div>
         </Container>
