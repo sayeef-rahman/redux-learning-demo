@@ -5,18 +5,16 @@ import Home from './components/Home/Home';
 import { Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
 import SingleCartItem from './components/Cart/SingleCartItem';
+import Login from './components/Login/Login';
 
 function App() {
   return (
     <div>
       <Header></Header>
-      <Home></Home>
-      {/* <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='cart' element={<Cart></Cart>}></Route>
-      </Routes> */}
-      
-      {/* <SingleCartItem></SingleCartItem> */}
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="login" element={<Login />}></Route>
+      </Routes>
       <Footer></Footer>
     </div>
   );
