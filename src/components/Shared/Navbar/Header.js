@@ -31,7 +31,7 @@ const Header = () => {
   }
 
   // User Logout
-  const signOut = () => {
+  const logOut = () => {
     signOut(auth);
   };
 
@@ -77,7 +77,7 @@ const Header = () => {
             </Navbar.Brand>
 
             {/* Login Button */}
-            <Navbar.Brand>{user? <button className="" onClick={signOut} >Sign Out</button> : <Link to="/login">Login</Link>}</Navbar.Brand>
+            <Navbar.Brand>{user? <button className="" onClick={logOut} >Sign Out</button> : <Link to="/login">Login</Link>}</Navbar.Brand>
             
           </div>
         </Container>
