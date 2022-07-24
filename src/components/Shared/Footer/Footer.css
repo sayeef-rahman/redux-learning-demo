@@ -1,3 +1,8 @@
+#footer {
+  position: fixed;
+  bottom: 0;
+}
+
 .footer-background-color{
   margin-top: 50px;
   background-color: rgb(219, 219, 219);

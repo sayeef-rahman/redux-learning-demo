@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import {useNavigate, useLocation, Link} from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+
+import './Login.css';
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -21,23 +26,24 @@ const Login = () => {
   let from = location.state?.from?.pathname || '/';
 
   //Navigate after Login
-  useEffect(()=>{
-    if(user || gUser){
-      navigate(from,{replace: true});
+  useEffect(() => {
+    if (user || gUser) {
+      navigate(from, { replace: true });
     }
-  },[user, gUser,from, navigate]);
+  }, [user, gUser, from, navigate]);
 
   // onSubmit Function
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
   };
   return (
-    <div className=''>
+    <div className='loginForm-Container w-50 mx-lg-auto'>
       <div className=''>
         <div className=''>
           <h2 className=''>Login</h2>
+          {/* form start */}
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className=''>
+            <div className='mx-auto'>
               <label className=''>
                 <span className=''>Email</span>
               </label>
@@ -97,15 +103,20 @@ const Login = () => {
             {signInError}
             <input className='' type='submit' value='Login' />
           </form>
+          {/* Form End */}
+
+          {/* New User Option Start */}
           <p>
             <small>
-              New to Doctors Portal{' '}
+              New to Onlie Shop?{' '}
               <Link className='text-primary' to='/signup'>
                 Create New Account
               </Link>
             </small>
           </p>
           <div className=''>OR</div>
+
+          {/* Signinwith Google Button */}
           <button onClick={() => signInWithGoogle()} className=''>
             Continue with Google
           </button>

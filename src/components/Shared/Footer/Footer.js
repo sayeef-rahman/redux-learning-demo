@@ -5,8 +5,8 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className='py-5 footer-background-color'>
-      <div className='w-75 mx-auto'>
+    <footer className='py-5 footer-background-color w-100' id='footer'>
+      <div className='mx-auto'>
         <div className='d-flex'>
           <div>
             <h6>ABOUT US</h6>
