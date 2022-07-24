@@ -8,3 +8,12 @@
   color: white;
   background-color: rgb(4, 76, 209);
 }
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color: rgb(255, 247, 0);
+}
