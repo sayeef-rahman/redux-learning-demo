@@ -1,3 +1,11 @@
+.navbar-header-container{
+  background-color: rgb(4, 76, 209);
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .badge {
   padding-left: 9px;
   padding-right: 9px;
