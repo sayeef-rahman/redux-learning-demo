@@ -56,7 +56,7 @@ const Header = () => {
             </Link>
           </Navbar.Brand>
           <div>
-            <Navbar.Brand href='#home' className='fs-6'>
+            <Navbar.Brand href='/' className='fs-6'>
               Home
             </Navbar.Brand>
             <Navbar.Brand href='#home' className='fs-6'>

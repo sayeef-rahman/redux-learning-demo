@@ -8,7 +8,6 @@ const Home = () => {
   return (
     <div>
       <Slider></Slider>
-      <TimeDate></TimeDate>
       <Products></Products>
     </div>
   );
