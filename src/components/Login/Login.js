@@ -112,7 +112,7 @@ const Login = () => {
           {/* Form End */}
 
           {/* New User Option Start */}
-          <p className='mb-0'>
+          <p className='mb-0 text-center'>
             <small>
               New to Onlie Shop?{' '}
               <Link
