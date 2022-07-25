@@ -41,8 +41,8 @@ const Login = () => {
     <div className='loginForm-Container'>
       <div className='border-0'>
         {/* Main Input & Text form Container */}
-        <div className='card text-center loginForm w-50'>
-          <h2 className='my-4 text-uppercase'>Login</h2>
+        <div className='card loginForm w-50'>
+          <h2 className='my-4 text-uppercase text-center'>Login</h2>
           {/* form start */}
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className='mx-auto'>
@@ -64,14 +64,18 @@ const Login = () => {
                   },
                 })}
               />
-              <label className=''>
-                {errors.email?.type === 'required' && (
-                  <span className=''>{errors.email.message}</span>
-                )}
-                {errors.email?.type === 'pattern' && (
-                  <span className=''>{errors.email.message}</span>
-                )}
-              </label>
+              {/* Error Message Portion  */}
+              <br />
+              <div>
+                <label className=''>
+                  {errors.email?.type === 'required' && (
+                    <span className=''>{errors.email.message}</span>
+                  )}
+                  {errors.email?.type === 'pattern' && (
+                    <span className=''>{errors.email.message}</span>
+                  )}
+                </label>
+              </div>
             </div>
             <div className=''>
               <label className=''>
@@ -92,14 +96,19 @@ const Login = () => {
                   },
                 })}
               />
-              <label className=''>
-                {errors.password?.type === 'required' && (
-                  <span className=''>{errors.password.message}</span>
-                )}
-                {errors.password?.type === 'minLength' && (
-                  <span className=''>{errors.password.message}</span>
-                )}
-              </label>
+
+              {/* Error Message Portion  */}
+              <br />
+              <div>
+                <label className='text-danger'>
+                  {errors.password?.type === 'required' && (
+                    <p className='text-start'>{errors.password.message}</p>
+                  )}
+                  {errors.password?.type === 'minLength' && (
+                    <p className=''>{errors.password.message}</p>
+                  )}
+                </label>
+              </div>
             </div>
 
             {signInError}
@@ -134,10 +143,10 @@ const Login = () => {
           {/* Signinwith Google Button */}
           <button
             onClick={() => signInWithGoogle()}
-            className='google-login-btn mx-auto mb-4 text-uppercase'
+            className='google-login-btn mx-auto mb-4'
           >
-            <img src={googleIcon} alt="" className='' />
-            <span className='ps-2'>Continue with Google</span>
+            <img src={googleIcon} alt='' className='' />
+            <span className='ps-2 text-white'>Login with Google</span>
           </button>
         </div>
       </div>
