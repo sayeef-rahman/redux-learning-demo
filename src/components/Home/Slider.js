@@ -19,7 +19,7 @@ const Slider = () => {
       navigation
       autoplay={{ delay: 2000 }}
       pagination={{ clickable: true }}
-      className='swiper-main-container swiper-slide'
+      className='swiper-main-container swiper-slide container w-75'
     >
       <SwiperSlide className=''>
         <img className='slider-image' src={car1} alt='Slider Car' />
