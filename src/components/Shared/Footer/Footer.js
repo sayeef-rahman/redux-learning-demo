@@ -14,10 +14,10 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer className='py-5 footer-background-color w-100' id='footer'>
-      <div className='mx-auto w-75'>
+      <div className='container mx-auto w-75'>
         {/* Footer Top Section */}
-        <div className='d-flex justify-content-evenly align-items-center'>
-          <div>
+        <div className='row'>
+          <div className='col'>
             <h6 className=''>ABOUT US</h6>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
@@ -40,7 +40,7 @@ const Footer = () => {
               <FaYoutube className='fs-2'></FaYoutube>
             </a>
           </div>
-          <div className=''>
+          <div className='col'>
             <h6>PRODUCTS</h6>
             <div>
               <ul className='list-unstyled text-white text-decoration-none'>
@@ -62,7 +62,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className=''>
+          <div className='col'>
             <h6>OUR COMPANY</h6>
             <div>
               <ul className='list-unstyled text-white text-decoration-none'>
@@ -84,7 +84,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className=''>
+          <div className='col'>
             <h6>YOUR ACCOUNT</h6>
             <div>
               <ul className='list-unstyled text-white text-decoration-none'>
@@ -104,11 +104,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        </div>
 
         {/* Bottom text & icom element */}
         <hr style={{ marginTop: '100px' }} />
 
         {/* Footer Bottom Sectio */}
+        <div>
         <div className='d-flex pt-4 justify-content-between align-items'>
           <div>
             <h6>Copyright © 2022 Sindabad. All Rights Reserved</h6>
