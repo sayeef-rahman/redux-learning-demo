@@ -88,27 +88,27 @@ const Footer = () => {
             <div>
               <ul className='list-unstyled text-white text-decoration-none'>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Delivery
                   </a>
                 </li>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Legal Notice
                   </a>
                 </li>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Contact Us
                   </a>
                 </li>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Sitemap
                   </a>
                 </li>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Stories
                   </a>
                 </li>
@@ -121,22 +121,22 @@ const Footer = () => {
             <div>
               <ul className='list-unstyled text-white text-decoration-none'>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Addresses
                   </a>
                 </li>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Credit slips
                   </a>
                 </li>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Orders
                   </a>
                 </li>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Personal info
                   </a>
                 </li>

@@ -80,8 +80,8 @@ const Header = () => {
               {user ? (
                 <img
                   src={user.photoURL}
-                  alt='user profile photo'
-                  className='m-0 p-0 rounded rounded-circle pb-1'
+                  alt='user'
+                  className='m-0 p-0 rounded rounded-circle'
                   style={{ width: '30px' }}
                 />
               ) : (

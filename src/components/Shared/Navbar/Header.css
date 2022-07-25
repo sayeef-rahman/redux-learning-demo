@@ -18,7 +18,6 @@
   border-radius: 9px;
 }
 
-.label-warning[href],
 .badge-warning[href] {
   background-color: #c67605;
 }
@@ -29,4 +28,10 @@
     padding: 0 5px;
     vertical-align: top;
     margin-left: -10px; 
+}
+
+button{
+  font-size: 16px;
+  color: white;
+  background-color: inherit;
 }
