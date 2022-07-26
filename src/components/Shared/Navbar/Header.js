@@ -43,7 +43,7 @@ const Header = () => {
     <div className='navbar-header-container'>
       <Navbar className='' variant='dark'>
         <Container>
-          <Navbar.Brand >
+          <Navbar.Brand>
             <Link to='/' className='text-white text-decoration-none'>
               <img
                 alt=''
@@ -66,7 +66,7 @@ const Header = () => {
               Men
             </Navbar.Brand>
             <Navbar.Brand href='#home' className='fs-6'>
-              Women
+              <Link to='/'>Home</Link>
             </Navbar.Brand>
 
             {/* Show Cart in NavBar  */}
