@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Navbar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,14 +12,28 @@ import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 
 const Header = () => {
-  //Cart items
-  // const cart = useSelector((state) => state.cart);
-  // console.log('Header Products:', cart);
-  // const [cartVisibility, setCartVisibility] = useState(false);
+
+  const [counter, setCounter] = useState(0);
+
+   let lastCount = useSelector((state) => state.cart.length);
+
+
+  // console.log('cart State', cart);
+  const [cartVisibility, setCartVisibility] = useState(false);
   // Show Cart modal in Cart Button Click
-  // const showCart = () => {
-  //   setCartVisibility(!cartVisibility);
-  // };
+  const showCart = () => {
+    setCartVisibility(!cartVisibility);
+  };
+
+  useEffect(() => {
+    console.log("initial call")
+    // Cart items
+    let localItem = JSON.parse(localStorage.getItem('carts'));
+    if(localItem){
+
+      setCounter(JSON.parse(localStorage.getItem('carts')).length);
+    }
+  }, [lastCount]);
 
 
   //Logged in User
@@ -71,12 +85,12 @@ const Header = () => {
             </Navbar.Brand>
 
             {/* Show Cart in NavBar  */}
-            {/* <Navbar.Brand onClick={() => showCart()}>
+             <Navbar.Brand onClick={() => showCart()}>
               <FontAwesomeIcon icon={faShoppingCart} />
               <span className='badge badge-warning' id='lblCartCount'>
-                {cart.cartItems?.length}
+                {counter}
               </span>
-            </Navbar.Brand> */}
+            </Navbar.Brand>
 
             {/* User Profile */}
             <Navbar.Brand className=''>
@@ -90,8 +104,8 @@ const Header = () => {
               ) : (
                 <FontAwesomeIcon icon={faUser} />
               )}
-              {/* <span className='badge badge-warning' id='lblCartCount'>
-              </span> */}
+               <span className='badge badge-warning' id='lblCartCount'>
+              </span>
             </Navbar.Brand>
 
             {/* Login Button */}
@@ -112,7 +126,7 @@ const Header = () => {
           </div>
         </Container>
       </Navbar>
-      {/* <Cart cartVisibility={cartVisibility}></Cart> */}
+       <Cart cartVisibility={cartVisibility}></Cart>
     </div>
   );
 };
