@@ -21,7 +21,7 @@ const Header = () => {
   //   setCartVisibility(!cartVisibility);
   // };
 
-  
+
   //Logged in User
   const [user] = useAuthState(auth);
   if (user) {
@@ -67,7 +67,7 @@ const Header = () => {
               Men
             </Navbar.Brand>
             <Navbar.Brand href='#home' className='fs-6'>
-              <Link to='/'>Home</Link>
+              Home
             </Navbar.Brand>
 
             {/* Show Cart in NavBar  */}
