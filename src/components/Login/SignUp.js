@@ -56,17 +56,14 @@ const SignUp = () => {
   return (
     <div className='signup-form-container'>
       <div className='card border-0 signUpForm w-50'>
-        <h2 className=''>Sign Up</h2>
+        <h2 className='my-4 text-uppercase text-center'>Sign Up</h2>
         {/* form start */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className=''>
-            <label className=''>
-              <span className=''>Name</span>
-            </label>
             <input
               type='text'
               placeholder='Your Name'
-              className=''
+              className='w-50 mt-3 p-2 ps-4 border-0 rounded rounded-pill'
               {...register('name', {
                 required: {
                   value: true,
@@ -82,9 +79,6 @@ const SignUp = () => {
           </div>
 
           <div className=''>
-            <label className=''>
-              <span className=''>Email</span>
-            </label>
             <input
               type='email'
               placeholder='Your Email'
@@ -110,9 +104,6 @@ const SignUp = () => {
             </label>
           </div>
           <div className=''>
-            <label className=''>
-              <span className=''>Password</span>
-            </label>
             <input
               type='password'
               placeholder='Password'

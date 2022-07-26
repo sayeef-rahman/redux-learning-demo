@@ -48,7 +48,7 @@ const Login = () => {
               <input
                 type='email'
                 placeholder='Email'
-                className='w-50 mt-3 p-2 ps-4 border-0 rounded rounded-pill'
+                className='w-50 p-2 ps-4 border-0 rounded rounded-pill'
                 {...register('email', {
                   required: {
                     value: true,
