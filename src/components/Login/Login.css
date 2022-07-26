@@ -79,8 +79,8 @@ img{
 /* Google Login Button */
 .google-login-btn{
   align-items: center;
-  background-color: rgb(71, 71, 71);
-  border: 2px solid #06f;
+  background-color: rgb(0, 0, 0);
+  border: 2px solid rgb(1, 1, 150);
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
@@ -103,4 +103,9 @@ img{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+.google-login-btn:hover{
+  background-color: #005fef;
+  border-color: #003078;
+  /* box-shadow: 5px 5px 15px  rgb(15, 143, 255); */
 }
