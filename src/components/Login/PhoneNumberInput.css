@@ -1,0 +1,10 @@
+.phone-number-container{
+  
+}
+input{
+  width: 50%;
+  border: none;
+  border-radius: 50rem;
+  padding: 8px;
+  padding-left: 16px;
+}

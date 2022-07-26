@@ -26,6 +26,9 @@ const Login = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || '/';
 
+  //Auth Console
+  console.log('User Info:',auth);
+
   //Navigate after Login
   useEffect(() => {
     if (user || gUser) {

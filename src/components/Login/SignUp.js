@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './SignUp.css';
 // import Loading from '../Shared/Loading/Loading';
 import Loading from '../Shared/Loading/Loading';
@@ -11,11 +11,14 @@ import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
 import { Link, useNavigate } from 'react-router-dom';
 import googleIcon from '../../assets/google.svg';
+import PhoneInput from 'react-phone-number-input';
+import PhoneNumberInput from './PhoneNumberInput';
 
 const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const {
     register,
+    control,
     formState: { errors },
     handleSubmit,
   } = useForm();
@@ -26,6 +29,8 @@ const SignUp = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
+
+  const [phoneNumberValue, setPhoneNumberValue] = useState();
 
   let signInError;
 
@@ -58,6 +63,7 @@ const SignUp = () => {
         <h2 className='my-4 text-uppercase text-center'>Sign Up</h2>
         {/* form start */}
         <form onSubmit={handleSubmit(onSubmit)}>
+          {/* name Input */}
           <div className=''>
             <input
               type='text'
@@ -75,12 +81,13 @@ const SignUp = () => {
             <div>
               <label className='py-1'>
                 {errors.name?.type === 'required' && (
-                  <span className=''>{errors.name.message}</span>
+                  <span className='text-danger'>{errors.name.message}</span>
                 )}
               </label>
             </div>
           </div>
 
+          {/* Email Input */}
           <div className=''>
             <input
               type='email'
@@ -102,14 +109,16 @@ const SignUp = () => {
             <div>
               <label className=''>
                 {errors.email?.type === 'required' && (
-                  <span className='text-dark'>{errors.email.message}</span>
+                  <span className='text-danger'>{errors.email.message}</span>
                 )}
                 {errors.email?.type === 'pattern' && (
-                  <span className=''>{errors.email.message}</span>
+                  <span className='text-danger'>{errors.email.message}</span>
                 )}
               </label>
             </div>
           </div>
+
+          {/* Password Input */}
           <div className=''>
             <input
               type='password'
@@ -128,6 +137,24 @@ const SignUp = () => {
             />
             {/* Error Message Portion  */}
             <br />
+            <div className=''>
+              <label className=''>
+                {errors.password?.type === 'required' && (
+                  <span className='text-danger'>{errors.password.message}</span>
+                )}
+                {errors.password?.type === 'minLength' && (
+                  <span className='text-danger'>{errors.password.message}</span>
+                )}
+              </label>
+            </div>
+          </div>
+
+          {/*Phone Number Input  */}
+          <div className=''>
+        
+          <PhoneNumberInput></PhoneNumberInput>
+            {/* Error Message Portion  */}
+            {/* <br />
             <div>
               <label className=''>
                 {errors.password?.type === 'required' && (
@@ -138,12 +165,16 @@ const SignUp = () => {
                 )}
               </label>
             </div>
+          </div> */}
           </div>
-
           {signInError}
 
           {/* SignUp Button */}
-          <input className='signUp-btn mx-auto mb-3 fw-bold' type='submit' value='Sign Up' />
+          <input
+            className='signUp-btn mx-auto mb-3 fw-bold'
+            type='submit'
+            value='Sign Up'
+          />
         </form>
         {/* Form End */}
 

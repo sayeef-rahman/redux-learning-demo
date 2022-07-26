@@ -21,6 +21,7 @@ const Header = () => {
   //   setCartVisibility(!cartVisibility);
   // };
 
+  
   //Logged in User
   const [user] = useAuthState(auth);
   if (user) {
@@ -81,7 +82,7 @@ const Header = () => {
             <Navbar.Brand className=''>
               {user ? (
                 <img
-                  src={user.photoURL}
+                  src={user?.photoURL}
                   alt='user'
                   className='m-0 p-0 rounded rounded-circle'
                   style={{ width: '30px' }}
