@@ -13,13 +13,13 @@ import { signOut } from 'firebase/auth';
 
 const Header = () => {
   //Cart items
-  const cart = useSelector((state) => state.cart);
+  // const cart = useSelector((state) => state.cart);
   // console.log('Header Products:', cart);
-  const [cartVisibility, setCartVisibility] = useState(false);
+  // const [cartVisibility, setCartVisibility] = useState(false);
   // Show Cart modal in Cart Button Click
-  const showCart = () => {
-    setCartVisibility(!cartVisibility);
-  };
+  // const showCart = () => {
+  //   setCartVisibility(!cartVisibility);
+  // };
 
   //Logged in User
   const [user] = useAuthState(auth);
@@ -68,12 +68,14 @@ const Header = () => {
             <Navbar.Brand href='#home' className='fs-6'>
               Women
             </Navbar.Brand>
-            <Navbar.Brand onClick={() => showCart()}>
+
+            {/* Show Cart in NavBar  */}
+            {/* <Navbar.Brand onClick={() => showCart()}>
               <FontAwesomeIcon icon={faShoppingCart} />
               <span className='badge badge-warning' id='lblCartCount'>
                 {cart.cartItems?.length}
               </span>
-            </Navbar.Brand>
+            </Navbar.Brand> */}
 
             {/* User Profile */}
             <Navbar.Brand className=''>

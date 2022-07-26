@@ -1,19 +1,13 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../Redux/Actions/cartAction';
 import './Product.css';
 
 const Product = ({ product }) => {
   const { image, price, title, id } = product;
 
-  //state
-  // const cartCounter = useSelector(state => state.cartCounter)
-  const dispatch = useDispatch();
-
-  const addToShoppingCart = (product) => {
-    dispatch(addToCart(product));
-  };
+  const addToShoppingCart= (productID) =>{
+    console.log('Clicked Product ID: ',productID );
+  } 
 
   return (
     <div className='col-lg-3 col-md-4 col-6 mt-4'>
@@ -37,7 +31,7 @@ const Product = ({ product }) => {
           <div>
             <button
               className='cart-btn  text-uppercase mb-3'
-              onClick={() => addToShoppingCart(product)}
+              onClick={() => addToShoppingCart(id)}
             >
               Add to Cart
             </button>
