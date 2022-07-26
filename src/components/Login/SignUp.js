@@ -26,7 +26,6 @@ const SignUp = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
-  navigate('/');
 
   let signInError;
 
@@ -50,8 +49,8 @@ const SignUp = () => {
 
   const onSubmit = async (data) => {
     console.log('Form Data: ', data);
-    // await createUserWithEmailAndPassword(data.email, data.password);
-    // await updateProfile({ displayName: data.name });
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
   };
   return (
     <div className='signup-form-container'>
@@ -63,7 +62,7 @@ const SignUp = () => {
             <input
               type='text'
               placeholder='Your Name'
-              className='w-50 mt-3 p-2 ps-4 border-0 rounded rounded-pill'
+              className='w-50 p-2 ps-4 border-0 rounded rounded-pill'
               {...register('name', {
                 required: {
                   value: true,
@@ -71,18 +70,22 @@ const SignUp = () => {
                 },
               })}
             />
-            <label className=''>
-              {errors.name?.type === 'required' && (
-                <span className=''>{errors.name.message}</span>
-              )}
-            </label>
+            {/* Error Message Portion  */}
+            <br />
+            <div>
+              <label className='py-1'>
+                {errors.name?.type === 'required' && (
+                  <span className=''>{errors.name.message}</span>
+                )}
+              </label>
+            </div>
           </div>
 
           <div className=''>
             <input
               type='email'
               placeholder='Your Email'
-              className=''
+              className='w-50 p-2 ps-4 border-0 rounded rounded-pill'
               {...register('email', {
                 required: {
                   value: true,
@@ -94,20 +97,24 @@ const SignUp = () => {
                 },
               })}
             />
-            <label className=''>
-              {errors.email?.type === 'required' && (
-                <span className='text-dark'>{errors.email.message}</span>
-              )}
-              {errors.email?.type === 'pattern' && (
-                <span className=''>{errors.email.message}</span>
-              )}
-            </label>
+            {/* Error Message Portion  */}
+            <br />
+            <div>
+              <label className=''>
+                {errors.email?.type === 'required' && (
+                  <span className='text-dark'>{errors.email.message}</span>
+                )}
+                {errors.email?.type === 'pattern' && (
+                  <span className=''>{errors.email.message}</span>
+                )}
+              </label>
+            </div>
           </div>
           <div className=''>
             <input
               type='password'
               placeholder='Password'
-              className=''
+              className='w-50 p-2 ps-4 border-0 rounded rounded-pill'
               {...register('password', {
                 required: {
                   value: true,
@@ -119,18 +126,24 @@ const SignUp = () => {
                 },
               })}
             />
-            <label className=''>
-              {errors.password?.type === 'required' && (
-                <span className=''>{errors.password.message}</span>
-              )}
-              {errors.password?.type === 'minLength' && (
-                <span className=''>{errors.password.message}</span>
-              )}
-            </label>
+            {/* Error Message Portion  */}
+            <br />
+            <div>
+              <label className=''>
+                {errors.password?.type === 'required' && (
+                  <span className=''>{errors.password.message}</span>
+                )}
+                {errors.password?.type === 'minLength' && (
+                  <span className=''>{errors.password.message}</span>
+                )}
+              </label>
+            </div>
           </div>
 
           {signInError}
-          <input className='' type='submit' value='Sign Up' />
+
+          {/* SignUp Button */}
+          <input className='signUp-btn mx-auto mb-3 fw-bold' type='submit' value='Sign Up' />
         </form>
         {/* Form End */}
 
