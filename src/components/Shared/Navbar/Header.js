@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <div className='navbar-header-container'>
-      <Navbar className='' variant='dark'>
+      <Navbar className='my-auto py-auto' variant='dark'>
         <Container>
           <Navbar.Brand>
             <Link to='/' className='text-white text-decoration-none'>
