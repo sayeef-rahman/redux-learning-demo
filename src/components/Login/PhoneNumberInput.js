@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import './PhoneNumberInput.css';
-import 'react-phone-number-input/style.css'
+import 'react-phone-number-input/style.css';
 
 const PhoneNumberInput = () => {
-  const [value, setValue] = useState()
+  const [value, setValue] = useState();
   return (
     <div className='phone-number-container w-50 mx-auto mb-3'>
       <PhoneInput
-      style={{marginBottom:'20px'}}
+        style={{ marginBottom: '20px' }}
+        defaultCountry='BD'
         placeholder='Phone Number'
         value={value}
         onChange={setValue}
