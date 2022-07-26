@@ -1,4 +1,11 @@
 .signup-form-container{
-  margin-top: 56px;
+  margin-top: 112px;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
+}
+
+.signUpForm{
+  background-color: rgb(220, 219, 219);
+  border-radius: 25px;
+  margin: auto;
 }

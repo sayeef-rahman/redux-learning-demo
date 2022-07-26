@@ -39,20 +39,16 @@ const Login = () => {
   };
   return (
     <div className='loginForm-Container'>
-      <div className='border-0'>
-        {/* Main Input & Text form Container */}
-        <div className='card loginForm w-50'>
+      {/* Main Input & Text form Container */}
+      <div className='card border-0 loginForm w-50'>
           <h2 className='my-4 text-uppercase text-center'>Login</h2>
           {/* form start */}
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className='mx-auto'>
-              <label className=''>
-                {/* <span className='pe-2'>Email:</span> */}
-              </label>
               <input
                 type='email'
-                placeholder='EMAIL'
-                className='w-50 my-3 p-2 ps-4 border-0 rounded rounded-pill'
+                placeholder='Email'
+                className='w-50 mt-3 p-2 ps-4 border-0 rounded rounded-pill'
                 {...register('email', {
                   required: {
                     value: true,
@@ -83,7 +79,7 @@ const Login = () => {
               </label>
               <input
                 type='password'
-                placeholder='PASSWORD'
+                placeholder='Password'
                 className='w-50 mb-3 p-2 ps-4 border-0 rounded rounded-pill'
                 {...register('password', {
                   required: {
@@ -113,9 +109,9 @@ const Login = () => {
 
             {signInError}
             <input
-              className='login-btn mx-auto my-3 fw-bold'
+              className='login-btn mx-auto mb-3 fw-bold'
               type='submit'
-              value='LOGIN'
+              value='Login'
             />
           </form>
           {/* Form End */}
@@ -149,7 +145,6 @@ const Login = () => {
             <span className='ps-2 text-white fw-bold'>Google Signin</span>
           </button>
         </div>
-      </div>
     </div>
   );
 };

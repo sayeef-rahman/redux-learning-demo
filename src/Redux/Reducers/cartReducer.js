@@ -9,9 +9,9 @@ const cartReducer = (state = localStorage.getItem('cart') || [], action) => {
       // console.log('cart', action?.payload);
       const existingCart = [...state];
       const coming = action.payload;
-      const removeD = existingCart.find((food) => food.id === coming.id);
-      if (removeD) {
-        removeD.qty = removeD.qty + 1;
+      const itemExist = existingCart.find((item) => item.id === coming.id);
+      if (itemExist) {
+        itemExist.qty = itemExist.qty + 1;
         localStorage.setItem('carts', JSON.stringify(existingCart));
         existingCart.map((cartItem) => {
           state.push(cartItem);
