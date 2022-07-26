@@ -113,7 +113,7 @@ const Login = () => {
 
             {signInError}
             <input
-              className='login-btn mx-auto my-3'
+              className='login-btn mx-auto my-3 fw-bold'
               type='submit'
               value='LOGIN'
             />
@@ -125,7 +125,7 @@ const Login = () => {
             <small>
               New to Onlie Shop?{' '}
               <Link
-                className='text-primary text-decoration-none fw-bold'
+                className='text-color text-decoration-none fw-bold'
                 to='/signup'
               >
                 Create New Account
@@ -146,7 +146,7 @@ const Login = () => {
             className='google-login-btn mx-auto mb-4'
           >
             <img src={googleIcon} alt='' className='' />
-            <span className='ps-2 text-white'>Login with Google</span>
+            <span className='ps-2 text-white'>Google Signin</span>
           </button>
         </div>
       </div>

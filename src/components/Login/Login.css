@@ -17,8 +17,8 @@
 
 .login-btn{
   align-items: center;
-  background-color: #06f;
-  border: 2px solid #06f;
+  background-color: rgb(0, 0, 0);
+  border: 2px solid rgb(1, 1, 150);
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
@@ -44,9 +44,9 @@
 }
 
 .login-btn:hover {
-  background-color: #3385ff;
-  border-color: #3385ff;
-  fill: #06f;
+  background-color: #005fef;
+  border-color: #003078;
+  /* fill: #06f; */
 }
 
 .login-btn:focus {
@@ -68,6 +68,13 @@
 img{
   width: 30px;
   height: 30px;
+}
+
+.text-color{
+  color: #171e29;
+}
+.text-color:hover{
+  color: navy;
 }
 /* Google Login Button */
 .google-login-btn{

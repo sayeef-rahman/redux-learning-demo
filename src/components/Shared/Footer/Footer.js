@@ -55,27 +55,27 @@ const Footer = () => {
             <div>
               <ul className='list-unstyled text-white text-decoration-none'>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Secure Payment
                   </a>
                 </li>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Price Drop
                   </a>
                 </li>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     New Products
                   </a>
                 </li>
                 <li>
-                  <a href='google.com' classname='footer-links'>
+                  <a href='google.com' className='footer-links'>
                     Best Sales
                   </a>
                 </li>

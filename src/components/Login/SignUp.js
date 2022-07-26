@@ -1,4 +1,5 @@
 import React from 'react';
+import './SignUp.css';
 // import Loading from '../Shared/Loading/Loading';
 import Loading from '../Shared/Loading/Loading';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
@@ -13,7 +14,7 @@ const SignUp = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  
+
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
@@ -30,7 +31,7 @@ const SignUp = () => {
 
   if (error || gError || updateError) {
     signInError = (
-      <p className='text-red-500'>
+      <p className=''>
         <small>
           {error?.message || gError?.message || updateError?.message}
         </small>
@@ -48,19 +49,17 @@ const SignUp = () => {
     navigate('/');
   };
   return (
-    <div className='flex h-screen justify-center items-center'>
-      <div className='card w-96 bg-base-100 shadow-xl'>
-        <div className='card-body'>
-          <h2 className='text-center text-2xl font-bold'>Sign Up</h2>
+    <div className='signup-form-container'>
+          <h2 className=''>Sign Up</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className='form-control w-full max-w-xs'>
-              <label className='label'>
-                <span className='label-text'>Name</span>
+            <div className=''>
+              <label className=''>
+                <span className=''>Name</span>
               </label>
               <input
                 type='text'
                 placeholder='Your Name'
-                className='input input-bordered w-full max-w-xs'
+                className=''
                 {...register('name', {
                   required: {
                     value: true,
@@ -68,23 +67,23 @@ const SignUp = () => {
                   },
                 })}
               />
-              <label className='label'>
+              <label className=''>
                 {errors.name?.type === 'required' && (
-                  <span className='label-text-alt text-red-500'>
+                  <span className=''>
                     {errors.name.message}
                   </span>
                 )}
               </label>
             </div>
 
-            <div className='form-control w-full max-w-xs'>
-              <label className='label'>
-                <span className='label-text'>Email</span>
+            <div className=''>
+              <label className=''>
+                <span className=''>Email</span>
               </label>
               <input
                 type='email'
                 placeholder='Your Email'
-                className='input input-bordered w-full max-w-xs'
+                className=''
                 {...register('email', {
                   required: {
                     value: true,
@@ -96,27 +95,27 @@ const SignUp = () => {
                   },
                 })}
               />
-              <label className='label'>
+              <label className=''>
                 {errors.email?.type === 'required' && (
-                  <span className='label-text-alt text-red-500'>
+                  <span className=''>
                     {errors.email.message}
                   </span>
                 )}
                 {errors.email?.type === 'pattern' && (
-                  <span className='label-text-alt text-red-500'>
+                  <span className=''>
                     {errors.email.message}
                   </span>
                 )}
               </label>
             </div>
-            <div className='form-control w-full max-w-xs'>
-              <label className='label'>
-                <span className='label-text'>Password</span>
+            <div className=''>
+              <label className=''>
+                <span className=''>Password</span>
               </label>
               <input
                 type='password'
                 placeholder='Password'
-                className='input input-bordered w-full max-w-xs'
+                className=''
                 {...register('password', {
                   required: {
                     value: true,
@@ -128,14 +127,14 @@ const SignUp = () => {
                   },
                 })}
               />
-              <label className='label'>
+              <label className=''>
                 {errors.password?.type === 'required' && (
-                  <span className='label-text-alt text-red-500'>
+                  <span className=''>
                     {errors.password.message}
                   </span>
                 )}
                 {errors.password?.type === 'minLength' && (
-                  <span className='label-text-alt text-red-500'>
+                  <span className=''>
                     {errors.password.message}
                   </span>
                 )}
@@ -152,21 +151,19 @@ const SignUp = () => {
           <p>
             <small>
               Already have an account?{' '}
-              <Link className='text-primary' to='/login'>
+              <Link className='' to='/login'>
                 Please login
               </Link>
             </small>
           </p>
-          <div className='divider'>OR</div>
+          <div className=''>OR</div>
           <button
             onClick={() => signInWithGoogle()}
-            className='btn btn-outline'
+            className=''
           >
             Continue with Google
           </button>
         </div>
-      </div>
-    </div>
   );
 };
 
