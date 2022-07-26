@@ -146,7 +146,7 @@ const Login = () => {
             onClick={() => signInWithGoogle()}
             className='google-login-btn mx-auto mb-4'
           >
-            <img src={googleIcon} alt='' className='' />
+            <img src={googleIcon} alt='' id='google-icon' />
             <span className='ps-2 text-white'>Google Signin</span>
           </button>
         </div>
