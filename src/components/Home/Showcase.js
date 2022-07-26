@@ -6,7 +6,7 @@ import showcase3 from '../../assets/showcase/showcase3.jpg'
 
 const Showcase = () => {
   return (
-    <div className='d-flex justify-content-center align-items-center showcase-container'>
+    <div className='d-flex justify-content-around align-items-center showcase-container'>
       <img src={showcase1} alt="" />
       <img src={showcase2} alt="" />
       <img src={showcase3} alt="" />
