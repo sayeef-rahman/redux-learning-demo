@@ -6,10 +6,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import './Slider.css';
-import car1 from '../../assets/cars/car1.jpg';
-import car3 from '../../assets/cars/car3.jpg';
-import car4 from '../../assets/cars/car4.jpg';
-import car5 from '../../assets/cars/car5.jpg';
+import shiopping1 from '../../assets/shopping_images/shiopping1.jpg'
+import shiopping2 from '../../assets/shopping_images/shiopping2.jpg'
+import shiopping3 from '../../assets/shopping_images/shiopping3.jpg'
+import shiopping4 from '../../assets/shopping_images/shiopping4.jpg'
+import shiopping5 from '../../assets/shopping_images/shiopping5.jpg'
 
 const Slider = () => {
   return (
@@ -19,19 +20,22 @@ const Slider = () => {
       navigation
       autoplay={{ delay: 2000 }}
       pagination={{ clickable: true }}
-      className='swiper-main-container swiper-slide container w-75'
+      className='swiper-main-container swiper-slide'
     >
       <SwiperSlide className=''>
-        <img className='slider-image' src={car1} alt='Slider Car' />
+        <img className='slider-image' src={shiopping1} alt='Slider Car' />
       </SwiperSlide>
       <SwiperSlide>
-        <img className='slider-image' src={car3} alt='Slider Car' />
+        <img className='slider-image' src={shiopping2} alt='Slider Car' />
       </SwiperSlide>
       <SwiperSlide>
-        <img className='slider-image' src={car4} alt='Slider Car' />
+        <img className='slider-image' src={shiopping3} alt='Slider Car' />
       </SwiperSlide>
       <SwiperSlide>
-        <img className='slider-image' src={car5} alt='Slider Car' />
+        <img className='slider-image' src={shiopping4} alt='Slider Car' />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img className='slider-image' src={shiopping5} alt='Slider Car' />
       </SwiperSlide>
     </Swiper>
   );
