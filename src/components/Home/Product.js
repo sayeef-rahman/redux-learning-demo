@@ -1,13 +1,21 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import './Product.css';
+import store from "../../Redux/store";
+import {useDispatch, useSelector} from 'react-redux';
+import {addToCart} from "../../Redux/Actions/cartAction";
 
 const Product = ({ product }) => {
+
+  const dispatch = useDispatch();
+
   const { image, price, title, id } = product;
 
   const addToShoppingCart= (productID) =>{
     console.log('Clicked Product ID: ',productID );
-  } 
+    dispatch(addToCart(product))
+
+  }
 
   return (
     <div className='col-lg-3 col-md-4 col-6 mt-4'>

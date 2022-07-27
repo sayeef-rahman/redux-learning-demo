@@ -1,58 +1,67 @@
 const initialState = {
-  cartItems: [],
+    cartItems: [],
 };
 
-const cartReducer = (state = localStorage.getItem('cart') || [], action) => {
-  switch (action.type) {
-    // Add product to cart
-    case 'ADD_TO_CART': {
-      // console.log('cart', action?.payload);
-      const existingCart = [...state];
-      const coming = action.payload;
-      const itemExist = existingCart.find((item) => item.id === coming.id);
-      if (itemExist) {
-        itemExist.qty = itemExist.qty + 1;
-        localStorage.setItem('carts', JSON.stringify(existingCart));
-        existingCart.map((cartItem) => {
-          state.push(cartItem);
-        });
-        return existingCart;
-      } else {
-        action.payload.qty = 1;
-        const newCart = [...existingCart, action.payload];
+const cartReducer = (state = initialState, action) => {
+    switch (action.type) {
+        // Add product to cart
+        case 'ADD_TO_CART': {
 
-        newCart.map((cartItem) => {
-          state.push(cartItem);
-        });
-        localStorage.setItem('carts', JSON.stringify(newCart));
-        return newCart;
-      }
+            const localItems = JSON.parse(localStorage.getItem('carts')) || [];
+            // console.log('cart reducer called', action?.payload);
+            // console.log('localItems', localItems);
+
+            const existingCart = [...localItems];
+            // console.log('existingCart', existingCart);
+            // console.log('current state', state.cartItems);
+            const coming = action.payload;
+            const itemExist = existingCart.find((item) => item.id === coming.id);
+
+            // console.log('itemExist', itemExist);
+            // console.log('current state', state.cartItems);
+
+            if (itemExist) {
+                // itemExist.qty = itemExist.qty + 1;
+                let itemIndex = existingCart.indexOf(itemExist);
+                existingCart[itemIndex].qty = existingCart[itemIndex].qty +1 ;
+                localStorage.setItem('carts', JSON.stringify(existingCart));
+                return existingCart;
+            } else {
+                action.payload.qty = 1;
+                const newCart = [...existingCart, action.payload];
+                localStorage.setItem('carts', JSON.stringify(newCart));
+                return newCart;
+            }
+        }
+
+        //Remove Product From Cart
+        case 'REMOVE_FROM_CART': {
+            let productID = action.payload;
+            console.log('Remove Cart:(ProductID)', productID);
+            console.log('state', state);
+
+            let oldCartItems = JSON.parse(state);
+
+            console.log("existing :: ==> ", oldCartItems);
+            const filteredProducts = oldCartItems.filter(
+                (product) => product.id !== productID
+            );
+            let products = JSON.stringify(filteredProducts);
+            localStorage.setItem('carts', products);
+            return products;
+        }
+
+        //Reset Cart
+        case 'RESET_CART': {
+            return initialState;
+            // const newState = initialState;
+        }
+
+        // console.log("Product ID: ",action.payload)
+        // console.log("All Products: ",state.cartItems);
+        default:
+            return state;
     }
-
-    //Remove Product From Cart
-    case 'REMOVE_FROM_CART': {
-      let productID = action.payload;
-      console.log('Remove Cart:(ProductID)', productID);
-      let oldCartItems = JSON.parse(state);
-      const filteredProducts = oldCartItems.filter(
-        (product) => product.id !== productID
-      );
-      let products = JSON.stringify(filteredProducts);
-      localStorage.setItem('carts', products);
-      return products;
-    }
-
-    //Reset Cart
-    case 'RESET_CART': {
-      return initialState;
-      // const newState = initialState;
-    }
-
-    // console.log("Product ID: ",action.payload)
-    // console.log("All Products: ",state.cartItems);
-    default:
-      return state;
-  }
 };
 
 // console.log('Initial State: ', initialState.cartItems);
