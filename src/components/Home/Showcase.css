@@ -1,0 +1,23 @@
+/* .img-hover-zoom {
+  height: 300px; [1.1] Set it as per your need
+  overflow: hidden; [1.2] Hide the overflowing of child elements
+} */
+
+/* [2] Transition property for smooth transformation of images */
+.single-showcase{
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  width: 100%;
+  height: auto;
+}
+.single-showcase:hover .img-hover-zoom{
+  transform: scale(1.25);
+}
+.single-showcase .img-hover-zoom {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  width: 100%;
+  height: auto;
+}
