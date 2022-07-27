@@ -7,11 +7,17 @@ import './Cart.css';
 const Cart = ({ cartVisibility }) => {
   const cart = JSON.parse(localStorage.getItem('carts'));
   const dispatch = useDispatch();
-  //Cart Reset Function
+
+
+  // Cart Reset Function
   const resetCart = () => {
     dispatch({ type: "RESET_CART" }); //Working
     // dispatch(resetCartAction()); //working
   };
+
+useEffect(()=>{
+  
+},[]);
 
   useEffect(() => {
     console.log('cart', cart);

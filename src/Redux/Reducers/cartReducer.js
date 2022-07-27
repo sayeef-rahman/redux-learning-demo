@@ -23,7 +23,7 @@ const cartReducer = (state = initialState, action) => {
             if (itemExist) {
                 // itemExist.cartQuantity = itemExist.cartQuantity + 1;
                 let itemIndex = existingCart.indexOf(itemExist);
-                existingCart[itemIndex].cartQuantity = existingCart[itemIndex].cartQuantity +1 ;
+                existingCart[itemIndex].cartQuantity = existingCart[itemIndex].cartQuantity + 1;
                 localStorage.setItem('carts', JSON.stringify(existingCart));
                 return existingCart;
             } else {
@@ -35,36 +35,31 @@ const cartReducer = (state = initialState, action) => {
         }
 
         //Remove Product From Cart
-        case 'REMOVE_FROM_CART': {
-            let productID = action.payload;
-            console.log('Remove Cart:(ProductID)', productID);
-            console.log('state', state);
+        // case 'REMOVE_FROM_CART': {
+        //     let productID = action.payload;
+        //     console.log('Remove Cart:(ProductID)', productID);
+        //     console.log('state', state);
 
-            let oldCartItems = JSON.parse(state);
+        //     let oldCartItems = JSON.parse(state);
 
-            console.log("existing :: ==> ", oldCartItems);
-            const filteredProducts = oldCartItems.filter(
-                (product) => product.id !== productID
-            );
-            let products = JSON.stringify(filteredProducts);
-            localStorage.setItem('carts', products);
-            return products;
-        }
+        //     console.log("existing :: ==> ", oldCartItems);
+        //     const filteredProducts = oldCartItems.filter(
+        //         (product) => product.id !== productID
+        //     );
+        //     let products = JSON.stringify(filteredProducts);
+        //     localStorage.setItem('carts', products);
+        //     return products;
+        // }
 
         //Reset Cart
         case 'RESET_CART': {
-            let localItems = JSON.parse(localStorage.getItem('carts')) ;
-            console.log('In Reset InitialState:', state);
-            console.log('In reset Storage:', localItems);
-          //  localItems = state.cartItems;
-          //  console.log('In reset new local items:', state.cartItems);
+            // return state.cartItems;
+            // let localItems = JSON.parse(localStorage.getItem('carts'));
+            // console.log('In Reset State:', state);
+            // console.log('In reset Local Storage:', localItems);
 
-
-            let arr = ['1','2','3','1'];
-            console.log('In reset Storage:', arr);
-            // return localStorage.setItem('carts',);
-          //  return localStorage.setItem('carts',arr);            // return initialState.cartItems;
-            // const newState = initialState;
+            state.cartItems = [];
+            return localStorage.setItem('carts',JSON.stringify(state.cartItems));
         }
 
         // console.log("Product ID: ",action.payload)
