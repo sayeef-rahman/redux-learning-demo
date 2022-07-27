@@ -8,6 +8,10 @@ import SingleCartItem from './components/Cart/SingleCartItem';
 import Login from './components/Login/Login';
 import SignUp from './components/Login/SignUp';
 import MenClothing from './components/ProductCategories/Men/MenClothing';
+import WomenClothing from './components/ProductCategories/Women/WomenClothing';
+import Shoes from './components/ProductCategories/Shoes/Shoes';
+import Bags from './components/ProductCategories/Bags/Bags';
+import Sunglasses from './components/ProductCategories/Sunglasses/Sunglasses';
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
         <Route path="login" element={<Login />}></Route>
         <Route path="signup" element={<SignUp />}></Route>
         <Route path="men_clothing" element={<MenClothing />}></Route>
+        <Route path="women_clothing" element={<WomenClothing />}></Route>
+        <Route path="shoes" element={<Shoes />}></Route>
+        <Route path="bags" element={<Bags />}></Route>
+        <Route path="sunglasses" element={<Sunglasses />}></Route>
       </Routes>
       <Footer></Footer>
     </div>

@@ -27,25 +27,33 @@ const ProductCategories = () => {
           <div className='row'>
             <div className='col-lg-6'>
               <div className='single-product mb-4'>
-                <img src={women} alt='' className='w-100' />
+                <Link to='women_clothing'>
+                  <img src={women} alt='' className='w-100' />
+                </Link>
               </div>
             </div>
 
             <div className='col-lg-6'>
               <div className='single-product mb-4'>
-                <img src={shoe} alt='' className='w-100' />
+                <Link to='shoes'>
+                  <img src={shoe} alt='' className='w-100' />
+                </Link>
               </div>
             </div>
 
             <div className='col-lg-6'>
               <div className='single-product'>
-                <img src={handbags} alt='' className='w-100' />
+                <Link to='bags'>
+                  <img src={handbags} alt='' className='w-100' />
+                </Link>
               </div>
             </div>
 
             <div className='col-lg-6'>
               <div className='single-product'>
-                <img src={sunglass} alt='' className='w-100' />
+                <Link to='sunglasses'>
+                  <img src={sunglass} alt='' className='w-100' />
+                </Link>
               </div>
             </div>
           </div>
