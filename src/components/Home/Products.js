@@ -18,7 +18,7 @@ const Products = () => {
           <h2>Our Products</h2>
         </div>
         <div>
-          <button className='btn-viewAll'>View All >></button>
+          <button className='btn-viewAll text-dark'>View All >></button>
         </div>
       </div>
 
