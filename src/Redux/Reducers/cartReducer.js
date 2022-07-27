@@ -53,7 +53,17 @@ const cartReducer = (state = initialState, action) => {
 
         //Reset Cart
         case 'RESET_CART': {
-            return initialState;
+            let localItems = JSON.parse(localStorage.getItem('carts')) ;
+            console.log('In Reset InitialState:', state);
+            console.log('In reset Storage:', localItems);
+          //  localItems = state.cartItems;
+          //  console.log('In reset new local items:', state.cartItems);
+
+
+            let arr = ['1','2','3','1'];
+            console.log('In reset Storage:', arr);
+            // return localStorage.setItem('carts',);
+          //  return localStorage.setItem('carts',arr);            // return initialState.cartItems;
             // const newState = initialState;
         }
 

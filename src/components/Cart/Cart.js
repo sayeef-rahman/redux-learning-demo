@@ -9,12 +9,14 @@ const Cart = ({ cartVisibility }) => {
   const dispatch = useDispatch();
   //Cart Reset Function
   const resetCart = () => {
-    // dispatch({ type: "RESET_CART" }); //Working
-    dispatch(resetCartAction()); //working
+    dispatch({ type: "RESET_CART" }); //Working
+    // dispatch(resetCartAction()); //working
   };
+
   useEffect(() => {
     console.log('cart', cart);
   }, [cart]);
+
   return (
     <div
       className={
