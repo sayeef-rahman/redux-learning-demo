@@ -1,4 +1,5 @@
 import React from 'react';
+import Freatures from './Freatures';
 import ProductCategories from './ProductCategories';
 import Products from './Products';
 import Showcase from './Showcase';
@@ -10,7 +11,8 @@ const Home = () => {
     <div>
       <Slider></Slider>
       <Showcase></Showcase>
-      {/* <Products></Products> */}
+      <Products></Products>
+      <Freatures></Freatures>
       <ProductCategories></ProductCategories>
       <Subscription></Subscription>
     </div>
