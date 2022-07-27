@@ -6,7 +6,6 @@ const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         // Add product to cart
         case 'ADD_TO_CART': {
-
             const localItems = JSON.parse(localStorage.getItem('carts')) || [];
             // console.log('cart reducer called', action?.payload);
             // console.log('localItems', localItems);
@@ -34,26 +33,25 @@ const cartReducer = (state = initialState, action) => {
             }
         }
 
-        //Remove Product From Cart
-        // case 'REMOVE_FROM_CART': {
-        //     let productID = action.payload;
-        //     console.log('Remove Cart:(ProductID)', productID);
-        //     console.log('state', state);
+        // Remove Product From Cart
+        case 'REMOVE_FROM_CART': {
+            let productID = action.payload;
+            console.log('Remove Cart:(ProductID)', productID);
+            console.log('state', state);
 
-        //     let oldCartItems = JSON.parse(state);
+            let oldCartItems = JSON.parse(state);
 
-        //     console.log("existing :: ==> ", oldCartItems);
-        //     const filteredProducts = oldCartItems.filter(
-        //         (product) => product.id !== productID
-        //     );
-        //     let products = JSON.stringify(filteredProducts);
-        //     localStorage.setItem('carts', products);
-        //     return products;
-        // }
+            console.log("existing :: ==> ", oldCartItems);
+            const filteredProducts = oldCartItems.filter(
+                (product) => product.id !== productID
+            );
+            let products = JSON.stringify(filteredProducts);
+            localStorage.setItem('carts', products);
+            return products;
+        }
 
         //Reset Cart
         case 'RESET_CART': {
-            // return state.cartItems;
             // let localItems = JSON.parse(localStorage.getItem('carts'));
             // console.log('In Reset State:', state);
             // console.log('In reset Local Storage:', localItems);
