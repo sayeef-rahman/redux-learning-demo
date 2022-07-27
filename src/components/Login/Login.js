@@ -114,7 +114,7 @@ const Login = () => {
 
             {/* Login Button */}
             <input
-              className='login-btn mx-auto mb-3 fw-bold'
+              className='login-btn mx-auto mb-3'
               type='submit'
               value='Login'
             />
