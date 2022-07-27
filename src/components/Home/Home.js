@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductCategories from './ProductCategories';
 import Products from './Products';
 import Showcase from './Showcase';
 import Slider from './Slider';
@@ -8,7 +9,8 @@ const Home = () => {
     <div>
       <Slider></Slider>
       <Showcase></Showcase>
-      <Products></Products>
+      {/* <Products></Products> */}
+      <ProductCategories></ProductCategories>
     </div>
   );
 };
