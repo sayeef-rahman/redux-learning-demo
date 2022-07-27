@@ -12,7 +12,6 @@ import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 
 const Header = () => {
-
   const [counter, setCounter] = useState(0);
 
    let lastCount = useSelector((state) => state.cart.length);
@@ -26,7 +25,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    console.log("initial call")
+    // console.log("initial call")
     // Cart items
     let localItem = JSON.parse(localStorage.getItem('carts'));
     if(localItem){
@@ -41,7 +40,7 @@ const Header = () => {
   if (user) {
     console.log(user.photoURL);
   } else {
-    console.log('No user found');
+    // console.log('No user found');
   }
 
   // User Logout

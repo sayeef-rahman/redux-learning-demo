@@ -21,13 +21,13 @@ const cartReducer = (state = initialState, action) => {
             // console.log('current state', state.cartItems);
 
             if (itemExist) {
-                // itemExist.qty = itemExist.qty + 1;
+                // itemExist.cartQuantity = itemExist.cartQuantity + 1;
                 let itemIndex = existingCart.indexOf(itemExist);
-                existingCart[itemIndex].qty = existingCart[itemIndex].qty +1 ;
+                existingCart[itemIndex].cartQuantity = existingCart[itemIndex].cartQuantity +1 ;
                 localStorage.setItem('carts', JSON.stringify(existingCart));
                 return existingCart;
             } else {
-                action.payload.qty = 1;
+                action.payload.cartQuantity = 1;
                 const newCart = [...existingCart, action.payload];
                 localStorage.setItem('carts', JSON.stringify(newCart));
                 return newCart;
@@ -79,7 +79,7 @@ export default cartReducer;
 //         state.cartItems.push(product);
 //       } else {
 //         let prod = state.cartItems[productIndex];
-//         prod.qty += 1;
+//         prod.cartQuantity += 1;
 //         let newprod = prod;
 //         console.log('product', newprod);
 //       }
