@@ -5,22 +5,19 @@ import SingleCartItem from './SingleCartItem';
 import './Cart.css';
 
 const Cart = ({ cartVisibility }) => {
-  const cart = JSON.parse(localStorage.getItem('carts'));
+  // const cart = JSON.parse(localStorage.getItem('carts'));
+  const cart = useSelector((state) => state?.cart);
+  console.log('cartSS', cart);
   const dispatch = useDispatch();
-
 
   // Cart Reset Function
   const resetCart = () => {
-    dispatch({ type: "RESET_CART" }); //Working
-    // dispatch(resetCartAction()); //working
+    // dispatch({ type: 'RESET_CART' }); //Working
+    dispatch(resetCartAction()); //working
   };
 
-useEffect(()=>{
-  
-},[]);
-
   useEffect(() => {
-    console.log('cart', cart);
+    // console.log('cart from local Storage:', cart);
   }, [cart]);
 
   return (

@@ -1,99 +1,103 @@
-const initialState = {
-    cartItems: [],
-};
-
-const cartReducer = (state = initialState, action) => {
-    switch (action.type) {
-        // Add product to cart
-        case 'ADD_TO_CART': {
-            const localItems = JSON.parse(localStorage.getItem('carts')) || [];
-            // console.log('cart reducer called', action?.payload);
-            // console.log('localItems', localItems);
-
-            const existingCart = [...localItems];
-            // console.log('existingCart', existingCart);
-            // console.log('current state', state.cartItems);
-            const coming = action.payload;
-            const itemExist = existingCart.find((item) => item.id === coming.id);
-
-            // console.log('itemExist', itemExist);
-            // console.log('current state', state.cartItems);
-
-            if (itemExist) {
-                // itemExist.cartQuantity = itemExist.cartQuantity + 1;
-                let itemIndex = existingCart.indexOf(itemExist);
-                existingCart[itemIndex].cartQuantity = existingCart[itemIndex].cartQuantity + 1;
-                localStorage.setItem('carts', JSON.stringify(existingCart));
+function cartReducer(cart = JSON.parse(localStorage.getItem('carts')) || [], action) {
+	switch (action.type) {
+		case 'ADD_TO_CART': {
+			const existingCart = [...cart];
+			const coming = action.payload;
+			const removeD = existingCart.find(food => food.id === coming.id);
+            if (removeD) {
+				removeD.qty = removeD.qty + 1;
+				localStorage.setItem('carts', JSON.stringify(existingCart));
                 return existingCart;
-            } else {
-                action.payload.cartQuantity = 1;
-                const newCart = [...existingCart, action.payload];
-                localStorage.setItem('carts', JSON.stringify(newCart));
+			}
+             else {
+				action.payload.qty = 1;
+				const newCart = [...existingCart, action.payload];
+				localStorage.setItem('carts', JSON.stringify(newCart));
                 return newCart;
-            }
-        }
-
-        // Remove Product From Cart
-        case 'REMOVE_FROM_CART': {
-            let productID = action.payload;
-            console.log('Remove Cart:(ProductID)', productID);
-            console.log('state', state);
-
-            let oldCartItems = JSON.parse(state);
-
-            console.log("existing :: ==> ", oldCartItems);
-            const filteredProducts = oldCartItems.filter(
-                (product) => product.id !== productID
-            );
-            let products = JSON.stringify(filteredProducts);
-            localStorage.setItem('carts', products);
-            return products;
-        }
-
-        //Reset Cart
-        case 'RESET_CART': {
-            // let localItems = JSON.parse(localStorage.getItem('carts'));
-            // console.log('In Reset State:', state);
-            // console.log('In reset Local Storage:', localItems);
-
-            state.cartItems = [];
-            return localStorage.setItem('carts',JSON.stringify(state.cartItems));
-        }
-
-        // console.log("Product ID: ",action.payload)
-        // console.log("All Products: ",state.cartItems);
-        default:
-            return state;
-    }
-};
-
-// console.log('Initial State: ', initialState.cartItems);
-
+			}
+		}
+		case 'REMOVE_FROM_CART': {
+			const existingCart = [...cart];
+			const newCart = existingCart.filter(cart => cart.id !== action.payload);
+            localStorage.setItem('carts',JSON.stringify(newCart));
+			return newCart;
+		}
+		case 'REMOVE_ALL_FROM_CART': {
+			const emptyCart = [];
+            const localData = localStorage.setItem('carts',JSON.stringify(emptyCart));
+            console.log('Local Data: ',localData);
+			return emptyCart;
+		}
+		default:
+			return cart;
+	}
+}
 export default cartReducer;
 
+// Old Cart Reducer
 // const cartReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case 'ADD_TO_CART': {
-//       let product = action.payload;
-//       let productIndex = state.cartItems.findIndex(
-//         (cartItem) => cartItem.id === product.id
-//       );
-//       if (productIndex === -1) {
-//         state.cartItems.push(product);
-//       } else {
-//         let prod = state.cartItems[productIndex];
-//         prod.cartQuantity += 1;
-//         let newprod = prod;
-//         console.log('product', newprod);
+//     switch (action.type) {
+//       // Add product to cart
+//       case 'ADD_TO_CART': {
+//         const localItems =
+//           JSON.parse(localStorage.getItem('carts')) || state?.cartItems;
+//         // console.log('cart reducer called', action?.payload);
+//         // console.log('localItems', localItems);
+  
+//         const existingCart = [...localItems];
+//         // console.log('existingCart', existingCart);
+//         // console.log('current state', state.cartItems);
+//         const coming = action.payload;
+//         const itemExist = existingCart.find((item) => item.id === coming.id);
+  
+//         // console.log('itemExist', itemExist);
+//         // console.log('current state', state.cartItems);
+  
+//         if (itemExist) {
+//           // itemExist.cartQuantity = itemExist.cartQuantity + 1;
+//           let itemIndex = existingCart.indexOf(itemExist);
+//           existingCart[itemIndex].cartQuantity =
+//             existingCart[itemIndex].cartQuantity + 1;
+//           localStorage.setItem('carts', JSON.stringify(existingCart));
+//           return existingCart;
+//         } else {
+//           action.payload.cartQuantity = 1;
+//           const newCart = [...existingCart, action.payload];
+//           localStorage.setItem('carts', JSON.stringify(newCart));
+//           return newCart;
+//         }
 //       }
+  
+//       // Remove Product From Cart
+//       case 'REMOVE_FROM_CART': {
+//         let removingProductID = action.payload;
+//         console.log('removingProductID ', removingProductID);
+  
+//         const localItems = JSON.parse(localStorage.getItem('carts'));
+//         console.log('Local Items: ', localItems);
+  
+//         const filteredProducts = localItems.filter(
+//           (product) => product.id !== removingProductID
+//         );
+//         console.log('filteredProducts: ', filteredProducts);
+  
+//         state = localStorage.setItem('carts', JSON.stringify(filteredProducts));
+  
+//         return state;
+//       }
+  
+//       //Reset Cart
+//       case 'RESET_CART': {
+//         localStorage.setItem('carts', JSON.stringify([]));
+//         let updatedCart = localStorage.getItem('carts');
+//         //   state.cartItems = updatedCart;
+//         return updatedCart;
+//       }
+  
+//       // console.log("Product ID: ",action.payload)
+//       // console.log("All Products: ",state.cartItems);
+  
+//       default:
+//         return state;
 //     }
-//     default:
-//       return state;
-//   }
-// };
-
-// case 'REMOVE_FROM_CART': {
-//
-
-//   // return const foundInCart =
 //   };
