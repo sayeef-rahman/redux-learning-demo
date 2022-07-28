@@ -79,8 +79,8 @@ const Header = () => {
             <Navbar.Brand href='#home' className='fs-6'>
               Men
             </Navbar.Brand>
-            <Navbar.Brand href='#home' className='fs-6'>
-              Home
+            <Navbar.Brand href='career' className='fs-6'>
+              Career
             </Navbar.Brand>
 
             {/* Show Cart in NavBar  */}

@@ -12,6 +12,7 @@ import WomenClothing from './components/ProductCategories/Women/WomenClothing';
 import Shoes from './components/ProductCategories/Shoes/Shoes';
 import Bags from './components/ProductCategories/Bags/Bags';
 import Sunglasses from './components/ProductCategories/Sunglasses/Sunglasses';
+import Career from './components/Career/Career';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="shoes" element={<Shoes />}></Route>
         <Route path="bags" element={<Bags />}></Route>
         <Route path="sunglasses" element={<Sunglasses />}></Route>
+        <Route path='career' element={<Career />}></Route>
       </Routes>
       <Footer></Footer>
     </div>
