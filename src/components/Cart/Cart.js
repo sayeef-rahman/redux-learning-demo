@@ -6,7 +6,7 @@ import './Cart.css';
 
 const Cart = ({ cartVisibility }) => {
   const cart = useSelector((state) => state?.cart);
-  console.log('Cart:',cart.length)
+  console.log('Cart:',cart)
   const dispatch = useDispatch();
 
   // Cart Reset Function
