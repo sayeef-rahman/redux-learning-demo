@@ -2,15 +2,15 @@ function cartReducer(cart = JSON.parse(localStorage.getItem('carts')) || [], act
 	switch (action.type) {
 		case 'ADD_TO_CART': {
 			const existingCart = [...cart];
-			const coming = action.payload;
-			const removeD = existingCart.find(food => food.id === coming.id);
-            if (removeD) {
-				removeD.qty = removeD.qty + 1;
+			const newItem = action.payload;
+			const exists = existingCart.find(product => product.id === newItem.id);
+            if (exists) {
+				exists.cartQuantity = exists.cartQuantity + 1;
 				localStorage.setItem('carts', JSON.stringify(existingCart));
                 return existingCart;
 			}
              else {
-				action.payload.qty = 1;
+				action.payload.cartQuantity = 1;
 				const newCart = [...existingCart, action.payload];
 				localStorage.setItem('carts', JSON.stringify(newCart));
                 return newCart;
@@ -47,8 +47,8 @@ export default cartReducer;
 //         const existingCart = [...localItems];
 //         // console.log('existingCart', existingCart);
 //         // console.log('current state', state.cartItems);
-//         const coming = action.payload;
-//         const itemExist = existingCart.find((item) => item.id === coming.id);
+//         const newItem = action.payload;
+//         const itemExist = existingCart.find((item) => item.id === newItem.id);
   
 //         // console.log('itemExist', itemExist);
 //         // console.log('current state', state.cartItems);
