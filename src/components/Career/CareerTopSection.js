@@ -4,7 +4,7 @@ import career from "../../assets/career/career.jpg";
 
 const CareerTopSection = () => {
   return (
-    <div className="career-top-container mx-auto d-flex justify-content-center align-items-center">
+    <div className="career-top-container container mx-auto d-flex justify-content-center align-items-center">
       <div className="p-3 d-block">
         <h4 className="fw-bold text-uppercase">We don’t offer jobs.</h4>
         <h4 className="fw-bold text-uppercase text-warning">We offer careers.</h4>
