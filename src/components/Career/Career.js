@@ -1,4 +1,5 @@
 import React from 'react';
+import Benefits from './Benefits';
 import CareerTopSection from './CareerTopSection';
 import CurrentJobs from './CurrentJobs';
 
@@ -7,6 +8,7 @@ const Career = () => {
         <div>
             <CareerTopSection></CareerTopSection>
             <CurrentJobs></CurrentJobs>
+            <Benefits></Benefits>
         </div>
     );
 };
