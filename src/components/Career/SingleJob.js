@@ -48,7 +48,7 @@ const SingleJob = () => {
           </div>
         </div>
         <div className="py-3 text-center">
-          <button className="text-dark p-2 rounded">View Details</button>
+          <button className="job-details-btn p-2 rounded">View Details</button>
         </div>
       </div>
     </div>

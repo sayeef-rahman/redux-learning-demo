@@ -7,8 +7,8 @@ import { AiOutlineMergeCells } from "react-icons/ai";
 
 const Benefits = () => {
   return (
-    <div className="container text-center">
-      <h1 className="text-uppercase mt-5 fs-4">Other Benefits</h1>
+    <div className="container text-center pt-2">
+      <h1 className="text-uppercase my-3 pt-3 fs-4">Other Benefits</h1>
       <p className="px-3">
         There’s life at work & life outside of work. We want everyone to be
         healthy, travel often, get time to give back, & have the financial
