@@ -10,11 +10,17 @@ const SingleBlog = () => {
         <h5 className="card-title">
           SINDABAD.COM WINS THE CHANNEL I DIGITAL MEDIA AWARD 2020
         </h5>
-        <p className="card-text">
+        <p className="card-text py-2">
           Bangladesh’s first and largest B2B e-commerce marketplace,
           Sindabad.com, has clinched the Channel I Digital Media Award 2020 in
           the category of Best B2B E-Commerce 2020.
         </p>
+        <div>
+          <p className="text-center">
+            Share On:
+          </p>
+          
+        </div>
       </div>
     </div>
   );
