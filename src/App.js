@@ -13,6 +13,7 @@ import Shoes from './components/ProductCategories/Shoes/Shoes';
 import Bags from './components/ProductCategories/Bags/Bags';
 import Sunglasses from './components/ProductCategories/Sunglasses/Sunglasses';
 import Career from './components/Career/Career';
+import Blogs from './components/Blogs/Blogs';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="bags" element={<Bags />}></Route>
         <Route path="sunglasses" element={<Sunglasses />}></Route>
         <Route path='career' element={<Career />}></Route>
+        <Route path='blogs' element={<Blogs />}></Route>
       </Routes>
       <Footer></Footer>
     </div>
