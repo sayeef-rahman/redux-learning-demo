@@ -7,9 +7,11 @@ const CareerAspiration = () => {
     <div className="container mt-5 pt-2 text-center">
       <h1 className="fs-4 text-uppercase">Career Aspiration</h1>
       <div className="mt-4">
-        <img src={imran} alt="" className="border border-4 rounded-circle" />
+        <div className="d-flex justify-content-center profile-image-container  mx-auto">
+          <img src={imran} alt="" className="rounded-circle" />
+        </div>
         <h4 className="text-uppercase fs-5 mt-3 mb-0">Md. Imran Hasan</h4>
-        <p className="text-center">
+        <p className="text-center px-3">
           Assistant Manager, Operation & Fulfillment Department.
         </p>
         <p className="px-3">
