@@ -7,7 +7,7 @@ import SingleJob from "./SingleJob";
 const CurrentJobs = () => {
   return (
     <div>
-      <h1 className="text-center mb-4 text-uppercase fw-bold">Available Career Role</h1>
+      <h1 className="text-center mb-4 text-uppercase fw-bold">Available Career Roles</h1>
       <SingleJob></SingleJob>
       <SingleJob></SingleJob>
       <SingleJob></SingleJob>
