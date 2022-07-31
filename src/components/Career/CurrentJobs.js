@@ -7,11 +7,11 @@ import SingleJob from "./SingleJob";
 const CurrentJobs = () => {
   return (
     <div>
-      <h1 className="text-center mb-4 text-uppercase fw-bold">Available Career Roles</h1>
+      <h1 className="text-center mb-4 text-uppercase fw-bold">Open Career Roles</h1>
+      {/* <SingleJob></SingleJob>
       <SingleJob></SingleJob>
       <SingleJob></SingleJob>
-      <SingleJob></SingleJob>
-      <SingleJob></SingleJob>
+      <SingleJob></SingleJob> */}
     </div>
   );
 };
