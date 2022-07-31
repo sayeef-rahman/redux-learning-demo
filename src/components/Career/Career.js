@@ -6,7 +6,7 @@ import OurValues from './OurValues';
 
 const Career = () => {
     return (
-        <div>
+        <div className=''>
             <CareerTopSection></CareerTopSection>
             <CurrentJobs></CurrentJobs>
             <Benefits></Benefits>
