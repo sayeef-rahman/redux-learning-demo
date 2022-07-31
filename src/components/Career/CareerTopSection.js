@@ -8,7 +8,7 @@ const CareerTopSection = () => {
       <div className="image-container">
         <img src={career} alt="" className="image-top pb-0 mx-auto" />
       </div>
-      <div className="d-block">
+      <div className="d-block mt-3">
         <h4 className="text-center text-uppercase fs-4">
           We <span className="text-danger">don’t</span> offer jobs.
         </h4>
