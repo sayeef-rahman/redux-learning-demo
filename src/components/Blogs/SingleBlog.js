@@ -15,12 +15,9 @@ const SingleBlog = () => {
           Sindabad.com, has clinched the Channel I Digital Media Award 2020 in
           the category of Best B2B E-Commerce 2020.
         </p>
-        <div>
-          <p className="text-center">
-            Share On:
-          </p>
-          
-        </div>
+      </div>
+      <div className="mx-auto">
+        <button className="text-center text-dark">Read More</button>
       </div>
     </div>
   );

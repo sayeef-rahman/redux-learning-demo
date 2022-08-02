@@ -14,6 +14,7 @@ import Bags from './components/ProductCategories/Bags/Bags';
 import Sunglasses from './components/ProductCategories/Sunglasses/Sunglasses';
 import Career from './components/Career/Career';
 import Blogs from './components/Blogs/Blogs';
+import SingleBlogDetails from './components/Blogs/SingleBlogDetails';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         <Route path="sunglasses" element={<Sunglasses />}></Route>
         <Route path='career' element={<Career />}></Route>
         <Route path='blogs' element={<Blogs />}></Route>
-        <Route path='blogs' element={< />}></Route>
+        <Route path='blogs' element={<SingleBlogDetails />}></Route>
       </Routes>
       <Footer></Footer>
     </div>

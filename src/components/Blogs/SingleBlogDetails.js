@@ -3,7 +3,7 @@ import './SingleBlogDetails.css';
 
 const SingleBlogDetails = () => {
     return (
-        <div>
+        <div className='single-blog-container'>
             <h1>SingleBlogDetails</h1>
         </div>
     );
