@@ -19,9 +19,6 @@ const SingleBlog = () => {
       <div className="mx-auto">
         <button className="text-center text-dark">Read More</button>
       </div>
-      <div className="mx-auto">
-        <button className="text-center text-dark">Read More</button>
-      </div>
     </div>
   );
 };
