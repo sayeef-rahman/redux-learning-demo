@@ -1,6 +1,7 @@
 .cart-container{
-  background-color: bisque;
-  font-size: 12px;;
+  background-color: black;
+  font-size: 12px;
+  color: white;
   max-width: 400px;
   max-height: 400px;
   padding: 10px;

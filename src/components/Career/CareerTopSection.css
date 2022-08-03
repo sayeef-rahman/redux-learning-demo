@@ -1,0 +1,27 @@
+.career-top-container{
+    margin-top: 85px;
+    margin-bottom: 30px;
+    /* max-width: 100%; */
+}
+.image-container{
+    display: flex;
+}
+.image-top{
+   width: 60%;
+}
+
+@media screen and (max-width: 480px) {
+    p{
+        font-size: 14px;
+    };
+    .image-top{
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width: 480px) {
+    .image-top{
+        width: 100%;
+    }
+    
+}

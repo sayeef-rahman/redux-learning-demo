@@ -5,22 +5,18 @@ import SingleCartItem from './SingleCartItem';
 import './Cart.css';
 
 const Cart = ({ cartVisibility }) => {
-  const cart = JSON.parse(localStorage.getItem('carts'));
+  const cart = useSelector((state) => state?.cart);
+  console.log('Cart:',cart)
   const dispatch = useDispatch();
-
 
   // Cart Reset Function
   const resetCart = () => {
-    dispatch({ type: "RESET_CART" }); //Working
-    // dispatch(resetCartAction()); //working
+    // dispatch({ type: 'RESET_CART' }); //Working
+    dispatch(resetCartAction()); //working
   };
 
-useEffect(()=>{
-  
-},[]);
-
   useEffect(() => {
-    console.log('cart', cart);
+    // console.log('cart from local Storage:', cart);
   }, [cart]);
 
   return (
@@ -31,7 +27,7 @@ useEffect(()=>{
           : 'cart-container text-center d-none'
       }
     >
-      <h5 className=''>Cart Items</h5>
+      <h5 className={cart.length === 0 ? 'd-none bg-inherit' : 'd-block'}>Cart Items</h5>
       {cart?.map((cartItem) => (
         <SingleCartItem key={cartItem.id} cartItem={cartItem}></SingleCartItem>
       ))}

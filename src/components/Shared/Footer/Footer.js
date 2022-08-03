@@ -8,6 +8,7 @@ import {
   FaCcMastercard,
   FaCcPaypal,
   FaCcApplePay,
+<<<<<<< HEAD
   FaCcAmazonPay,
 } from "react-icons/fa";
 import { SiGooglepay } from "react-icons/si";
@@ -15,6 +16,13 @@ import { BsFacebook } from "react-icons/bs";
 import React from "react";
 import { faIdCard, faUser } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";
+=======
+  FaCcAmazonPay
+} from 'react-icons/fa';
+import {SiGooglepay} from 'react-icons/si';
+import React from 'react';
+import './Footer.css';
+>>>>>>> d10939ce43fae7a7159a9fc969544c151c191ffb
 
 const Footer = () => {
   return (

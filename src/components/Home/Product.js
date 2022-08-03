@@ -12,7 +12,7 @@ const Product = ({ product }) => {
   const { image, price, title, id } = product;
 
   const addToShoppingCart= (productID) =>{
-    console.log('Clicked Product ID: ',productID );
+    // console.log('Clicked Product ID: ',productID );
     dispatch(addToCart(product))
 
   }

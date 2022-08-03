@@ -13,6 +13,6 @@ export function removeFromCart(payload) {
 }
 export function resetCartAction() {
   return {
-    type: 'RESET_CART',
+    type: 'REMOVE_ALL_FROM_CART',
   };
 }

@@ -1,0 +1,15 @@
+.single-job-container{
+    /* border: 2px solid rgb(199, 199, 199); */
+    border-top: 5px solid rgb(199, 199, 199);
+    border-bottom: 5px solid rgb(199, 199, 199);
+    border-left: 2px solid rgb(199, 199, 199);
+    border-right: 2px solid rgb(199, 199, 199);
+    border-radius: 5px;
+}
+
+.job-details-btn{
+    background-color: #f8ab01;
+    border: none;
+    color: white;
+    font-weight: 500;
+}
