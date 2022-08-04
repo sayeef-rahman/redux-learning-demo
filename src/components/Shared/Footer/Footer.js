@@ -181,7 +181,11 @@ const Footer = () => {
             <FaCcMastercard className="fs-2 mx-1 text-white"></FaCcMastercard>
             <FaCcPaypal className="fs-2 mx-1 text-white"></FaCcPaypal>
             <SiGooglepay className="fs-2 mx-1 text-white"></SiGooglepay>
+            <SiGooglepay className="fs-2 mx-1 text-white"></SiGooglepay>
+            <SiGooglepay className="fs-2 mx-1 text-white"></SiGooglepay>
             <FaCcApplePay className="fs-2 mx-1 text-white"></FaCcApplePay>
+            <FaCcAmazonPay className="fs-2 mx-1 text-white"></FaCcAmazonPay>
+            <FaCcAmazonPay className="fs-2 mx-1 text-white"></FaCcAmazonPay>
             <FaCcAmazonPay className="fs-2 mx-1 text-white"></FaCcAmazonPay>
           </div>
         </div>
